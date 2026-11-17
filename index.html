@@ -84,7 +84,7 @@ h1{font-family:var(--mono);font-size:clamp(24px,6.5vw,38px);line-height:1.1;lett
 .lhead h1{font-size:clamp(22px,6vw,32px);margin:4px 0 0}
 .lhead i{color:var(--mu);font-size:13px}
 .player{background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
-.stage{position:relative;aspect-ratio:16/11;background:radial-gradient(120% 90% at 80% 0%,color-mix(in srgb,var(--c) 22%,transparent),transparent 60%),var(--bg2);overflow:hidden}
+.stage{position:relative;aspect-ratio:4/3;background:radial-gradient(120% 90% at 80% 0%,color-mix(in srgb,var(--c) 22%,transparent),transparent 60%),var(--bg2);overflow:hidden}
 @media(min-width:760px){.stage{aspect-ratio:16/9}}
 .layer{position:absolute;inset:0;padding:16px;display:flex;flex-direction:column;justify-content:center;align-items:center;opacity:0;pointer-events:none}
 .layer.on{pointer-events:auto}
@@ -97,17 +97,17 @@ h1{font-family:var(--mono);font-size:clamp(24px,6.5vw,38px);line-height:1.1;lett
 .mini{position:absolute;left:10px;top:10px;width:58px;height:58px;border-radius:12px;overflow:hidden;border:2px solid var(--c);z-index:5;opacity:0;transition:opacity .3s}
 .mini .em{font-size:28px}
 .ltitle{position:absolute;top:14px;right:14px;left:80px;text-align:right;font-family:var(--mono);font-size:clamp(11px,3vw,13px);letter-spacing:.12em;color:var(--c);text-transform:uppercase;font-weight:800}
-.sizes{width:min(92%,640px);display:flex;flex-direction:column;gap:14px}
+.sizes{width:min(92%,640px);display:flex;flex-direction:column;gap:9px}
 .srow .lab{font-family:var(--mono);font-size:12px;color:var(--mu);display:flex;justify-content:space-between;margin-bottom:5px;gap:8px}
 .srow .lab b{color:var(--tx)}
-.srow .trk{height:30px;border-radius:9px;background:color-mix(in srgb,var(--line) 60%,transparent);position:relative;overflow:hidden}
+.srow .trk{height:24px;border-radius:9px;background:color-mix(in srgb,var(--line) 60%,transparent);position:relative;overflow:hidden}
 .srow .fil{position:absolute;left:0;top:0;bottom:0;border-radius:9px;display:flex;align-items:center;justify-content:flex-end;padding-right:6px;font-size:18px;min-width:30px}
 .srow.me .fil{background:var(--c)}
 .srow.ref .fil{background:color-mix(in srgb,var(--mu) 55%,transparent)}
 .facts{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:4px}
 .cloud{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;max-width:92%}
 .cloud .pill{font-size:clamp(12px,3.6vw,17px);padding:9px 14px}
-.bigq{font-size:clamp(40px,12vw,72px);line-height:1;margin-bottom:12px}
+.bigq{font-size:clamp(30px,9vw,64px);line-height:1;margin-bottom:8px}
 .factcard{max-width:min(92%,620px);background:var(--panel);border:2px solid var(--c);border-radius:16px;padding:16px 18px;font-size:clamp(14px,3.9vw,19px);font-weight:600;text-align:center;box-shadow:var(--shadow);line-height:1.4}
 .factcard .ex{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--c);color:#0a0e13;font-family:var(--mono);font-weight:800;margin-bottom:8px}
 /* intro */
@@ -147,6 +147,33 @@ html[data-theme=dark] .b3 h5{color:#eab308}
 .nav2 button{flex:1;padding:13px;border-radius:13px;border:1px solid var(--line);background:var(--panel);font-family:var(--mono);font-size:12.5px;text-align:center}
 .nav2 button.nx{background:var(--c);color:#0a0e13;border-color:var(--c);font-weight:800}
 .nav2 button:disabled{opacity:.35}
+.grp-h{font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--mu);margin:22px 2px 0;display:flex;align-items:center;gap:10px}
+.grp-h::after{content:"";flex:1;height:1px;background:var(--line)}
+.vs2{display:flex;align-items:center;gap:10px;width:100%;justify-content:center}
+.vsc{display:flex;flex-direction:column;align-items:center;gap:8px;width:42%}
+.frame2{width:100%;aspect-ratio:1;border-radius:14px;overflow:hidden;border:2px solid var(--c)}
+.vsx{font-family:var(--mono);font-weight:800;color:var(--c);font-size:clamp(16px,5vw,26px)}
+.vsrow{display:flex;gap:10px;width:100%;max-width:640px}
+.vsbox{flex:1;background:var(--panel);border:1.5px solid var(--line);border-radius:14px;padding:10px;font-size:clamp(12px,3.5vw,15px);text-align:center}
+.vsbox.a{border-color:var(--c)}
+.vsbox b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--mu);margin:6px 0 3px}
+.vsbox p{font-weight:700;line-height:1.3}
+.vsimg{height:clamp(44px,13vw,80px);border-radius:10px;overflow:hidden}
+.vsimg .em{font-size:28px}
+.split{display:grid;grid-template-columns:1fr 1fr;height:100%;position:relative}
+.split .ph .em{font-size:30px}
+.vsmini{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:var(--mono);font-weight:800;font-size:11px;background:var(--c);color:#0a0e13;padding:3px 6px;border-radius:7px}
+.trkwrap{width:min(96%,640px)}
+.trk-svg{width:100%;height:auto;color:var(--tx)}
+.trk-svg .snow{fill:color-mix(in srgb,var(--panel) 85%,#fff 15%);stroke:var(--line)}
+html[data-theme=light] .trk-svg .snow{fill:#fff}
+.trk-svg .tp{opacity:0}
+.trk-lbl{font-family:var(--mono);font-size:13px;fill:var(--mu)}
+.sound{margin-top:12px}
+.sbtn{width:100%;padding:13px;border-radius:13px;border:1.5px solid var(--c);background:color-mix(in srgb,var(--c) 12%,var(--panel));font-family:var(--mono);font-weight:700;font-size:13.5px}
+.sound audio{width:100%;margin-top:10px}
+.snote{font-size:12.5px;color:var(--mu);margin-top:6px}.snote a{color:var(--c)}
+.qtile .ico{font-size:34px}
 /* quiz */
 .qwrap{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:var(--shadow)}
 .qtop{display:flex;justify-content:space-between;font-family:var(--mono);font-size:12px;color:var(--mu);margin-bottom:10px}
@@ -646,6 +673,953 @@ const CATS = [
  ]}
 ];
 
+// ===== Erweiterungspaket 1: mehr Arten in bestehenden Bereichen =====
+const MORE = {
+saeuger:[
+ {n:'Dachs', l:'Meles meles', w:'Europäischer Dachs', e:'🦡', s:75, sl:'Körperlänge', g:'10–15 kg', a:'meist 6–10 Jahre', h:['🌲 Laubwald','🌳 Waldrand','🕳️ Erdbau'], f:['🪱 Regenwürmer','🪲 Insekten','🍎 Früchte','🌱 Wurzeln'],
+  x:'Ein Dachsbau kann viele Gänge und Kammern haben und wird oft über Generationen genutzt.',
+  d:'Der Dachs ist ein kräftiger Marder, der nachts unterwegs ist und tagsüber in seinem Bau schläft.',
+  erk:'Grauer Körper, schwarz-weiß gestreifter Kopf, kurze Beine mit langen Grabkrallen.',
+  bed:'Mit seinen Bauen schafft er Wohnungen für andere Tiere, z. B. Füchse.',
+  tipp:'Dachse sind sehr reinlich: Sie legen eigene „Toiletten“ außerhalb des Baus an.'},
+ {n:'Wolf', l:'Canis lupus', w:'Wolf', e:'🐺', s:120, sl:'Körperlänge', g:'30–50 kg', a:'meist 6–8 Jahre', h:['🌲 Große Wälder','🌾 Offene Landschaften'], f:['🦌 Rehe','🦌 Hirsche','🐗 Wildschweine'],
+  x:'Seit dem Jahr 2000 leben in Deutschland wieder wilde Wölfe – zuerst in der Lausitz.',
+  d:'Der Wolf ist der Vorfahre aller Hunde. Er lebt im Rudel, das ist meist eine Familie aus Eltern und Jungen.',
+  erk:'Graubraunes Fell, gerade herabhängender Schwanz, lange Beine, helle Kehle.',
+  bed:'Als Jäger hält er die Zahl von Rehen und Hirschen im Gleichgewicht.',
+  tipp:'Begegnest du einem Wolf: stehen bleiben, nicht wegrennen, laut sprechen – und nie füttern.'},
+ {n:'Luchs', l:'Lynx lynx', w:'Eurasischer Luchs', e:'🐈', s:100, sl:'Körperlänge', g:'15–30 kg', a:'meist 10–15 Jahre', h:['🌲 Bayerischer Wald','⛰️ Mittelgebirge'], f:['🦌 Rehe','🐇 Hasen','🐭 Kleintiere'],
+  x:'Der Luchs ist die größte Katze, die in Deutschland wild lebt – zum Beispiel im Bayerischen Wald.',
+  d:'Der Luchs ist ein scheuer Einzelgänger und ein Pirschjäger.',
+  erk:'Haarpinsel an den Ohren, Backenbart, kurzer Stummelschwanz mit schwarzer Spitze, gefleckte Beine.',
+  bed:'Er war in Deutschland ausgestorben und wurde wieder angesiedelt.',
+  tipp:'Seine großen, behaarten Pfoten wirken im Schnee wie Schneeschuhe.'},
+ {n:'Feldhase', l:'Lepus europaeus', w:'Feldhase', e:'🐇', s:60, sl:'Körperlänge', g:'3,5–5 kg', a:'meist 2–5 Jahre', h:['🌾 Felder','🌿 Wiesen'], f:['🌿 Gräser','🌼 Kräuter','🌱 Knospen'],
+  x:'Hasen erreichen auf der Flucht bis zu 70 km/h und schlagen dabei blitzschnelle Haken.',
+  d:'Der Feldhase lebt allein in offenen Landschaften und hat keinen Bau.',
+  erk:'Sehr lange Ohren mit schwarzen Spitzen, lange Hinterbeine, graubraunes Fell.',
+  bed:'Er ist durch die moderne Landwirtschaft selten geworden.',
+  tipp:'Hasenjunge liegen allein in einer Mulde – die Mutter kommt nur zum Säugen. Nicht mitnehmen!'},
+ {n:'Wildkaninchen', l:'Oryctolagus cuniculus', w:'Wildkaninchen', e:'🐇', s:40, sl:'Körperlänge', g:'1,5–2 kg', a:'meist 1–3 Jahre', h:['🌾 Böschungen','🏞️ Parks','🕳️ Erdbaue'], f:['🌿 Gras','🥬 Kräuter','🌳 Rinde (Winter)'],
+  x:'Aus dem Wildkaninchen wurden alle Hauskaninchen gezüchtet.',
+  d:'Das Wildkaninchen lebt gesellig in großen Bauen mit vielen Gängen.',
+  erk:'Kleiner als ein Hase, kürzere Ohren ohne schwarze Spitzen, weißer Schwanz („Blume“).',
+  bed:'Es ist Hauptbeute für Fuchs, Uhu und Habicht.',
+  tipp:'Kaninchenjunge kommen nackt und blind zur Welt, Hasenjunge mit Fell und offenen Augen.'},
+ {n:'Fischotter', l:'Lutra lutra', w:'Eurasischer Fischotter', e:'🦦', s:80, sl:'Körperlänge (ohne Schwanz)', g:'6–12 kg', a:'meist 8–10 Jahre', h:['🏞️ Flüsse','💧 Seen','🌊 Bäche'], f:['🐟 Fische','🦐 Krebse','🐸 Frösche'],
+  x:'Sein Fell ist extrem dicht – bis zu 50.000 Haare pro Quadratzentimeter halten ihn im Wasser warm.',
+  d:'Der Fischotter ist ein Marder, der hervorragend schwimmen und tauchen kann.',
+  erk:'Langer, schlanker Körper, dicker Schwanz, Schwimmhäute, dunkelbraunes Fell, heller Hals.',
+  bed:'Er zeigt saubere, naturnahe Gewässer an und kehrt langsam nach Bayern zurück.',
+  tipp:'Beim Tauchen kann er Nase und Ohren verschließen.'},
+ {n:'Rothirsch', l:'Cervus elaphus', w:'Rothirsch', e:'🦌', s:210, sl:'Körperlänge', g:'Hirsch 90–200 kg', a:'meist 12–15 Jahre', h:['🌲 Große Wälder','⛰️ Gebirge','🌾 Wiesen'], f:['🌿 Gras','🍃 Blätter','🌳 Rinde','🌰 Eicheln'],
+  x:'Im September „röhren“ die Hirsche laut durch den Wald – das ist die Brunftzeit.',
+  d:'Der Rothirsch ist eines der größten Wildtiere Deutschlands.',
+  erk:'Rotbraunes Sommerfell, männliche Tiere mit großem, verzweigtem Geweih, heller Fleck am Hinterteil.',
+  bed:'Er ist ein Pflanzenfresser, der Wälder und Wiesen mitgestaltet.',
+  tipp:'Das Geweih wird jedes Jahr im Spätwinter abgeworfen und wächst neu.'},
+ {n:'Zwergfledermaus', l:'Pipistrellus pipistrellus', w:'Zwergfledermaus', e:'🦇', s:4.5, sl:'Körperlänge', g:'3–8 g', a:'meist 3–5 Jahre', h:['🏘️ Dörfer & Städte','🏠 Spalten an Häusern','🌳 Parks'], f:['🦟 Mücken','🦋 Kleine Nachtfalter'],
+  x:'Sie passt zusammengefaltet in eine Streichholzschachtel und frisst in einer Nacht Hunderte Mücken.',
+  d:'Fledermäuse sind die einzigen Säugetiere, die richtig fliegen können.',
+  erk:'Winzig, dunkelbraun, flattert in der Dämmerung schnell und zickzackig um Laternen.',
+  bed:'Alle Fledermäuse sind streng geschützt – sie sind nützliche Insektenjäger.',
+  tipp:'Sie „sehen“ mit den Ohren: Ihre Ultraschall-Rufe kommen als Echo zurück.'}
+],
+voegel:[
+ {n:'Haussperling (Spatz)', l:'Passer domesticus', w:'Haussperling', e:'🐦', s:15, sl:'Körperlänge', g:'ca. 30 g', a:'meist 2–3 Jahre', h:['🏘️ Dörfer & Städte','🏡 Gärten','🐄 Bauernhöfe'], f:['🌾 Samen','🍞 Krümel','🐛 Insekten (für Junge)'],
+  x:'Spatzen leben schon seit Jahrtausenden immer in der Nähe von Menschen.',
+  d:'Der Haussperling ist ein geselliger, frecher kleiner Vogel.',
+  erk:'Männchen mit grauem Scheitel und schwarzem Kehlfleck („Latz“), Weibchen schlicht graubraun.',
+  bed:'Er ist in vielen Städten seltener geworden, weil Nistplätze und Insekten fehlen.',
+  tipp:'Spatzen baden gern im Sand – eine sandige Ecke im Garten hilft ihnen.'},
+ {n:'Buntspecht', l:'Dendrocopos major', w:'Buntspecht', e:'🐦', s:23, sl:'Körperlänge', g:'70–90 g', a:'meist 2–10 Jahre', h:['🌲 Wald','🌳 Parks','🏡 Gärten'], f:['🐛 Insektenlarven','🌰 Samen & Nüsse'],
+  x:'Er trommelt bis zu 20-mal pro Sekunde gegen das Holz – sein Kopf ist dafür gut gefedert.',
+  d:'Der Buntspecht ist der häufigste Specht Deutschlands.',
+  erk:'Schwarz-weiß gemustert, leuchtend rote Federn unter dem Schwanz, Männchen mit rotem Nackenfleck.',
+  bed:'Seine verlassenen Bruthöhlen nutzen später Meisen, Stare und Fledermäuse.',
+  tipp:'Er klemmt Zapfen in Baumspalten und hackt sie dort auf – eine „Spechtschmiede“.'},
+ {n:'Rabenkrähe', l:'Corvus corone', w:'Rabenkrähe', e:'🐦‍⬛', s:47, sl:'Körperlänge', g:'ca. 0,5 kg', a:'oft über 10 Jahre', h:['🌾 Felder','🏘️ Städte','🌳 Parks'], f:['🌾 Samen','🐛 Insekten','🥚 Eier','🗑️ Abfälle'],
+  x:'Krähen sind sehr schlau: Sie erkennen einzelne Menschen wieder und nutzen sogar Werkzeuge.',
+  d:'Die Rabenkrähe ist ein großer, ganz schwarzer Rabenvogel.',
+  erk:'Ganz schwarz, gerader kräftiger Schnabel, gerade abgeschnittener Schwanz, Ruf „krah“.',
+  bed:'Als Allesfresser räumt sie auf und frisst auch Aas.',
+  tipp:'Nicht verwechseln mit dem viel größeren Kolkraben – siehe Verwechslungen.'},
+ {n:'Kolkrabe', l:'Corvus corax', w:'Kolkrabe', e:'🐦‍⬛', s:64, sl:'Körperlänge', g:'1–1,5 kg', a:'bis über 20 Jahre', h:['⛰️ Gebirge','🌲 Wald','🌾 Offenes Land'], f:['🍖 Aas','🐭 Kleintiere','🌾 Samen'],
+  x:'Der Kolkrabe ist der größte Singvogel der Welt.',
+  d:'Der Kolkrabe ist ein sehr großer, kluger Rabenvogel.',
+  erk:'Größer als ein Bussard, sehr kräftiger Schnabel, zottige Kehlfedern, keilförmiger Schwanz im Flug, tiefes „korrk“.',
+  bed:'Er war fast ausgerottet und breitet sich heute wieder aus.',
+  tipp:'Raben spielen gern – sie rutschen sogar im Schnee Hänge hinunter.'},
+ {n:'Rauchschwalbe', l:'Hirundo rustica', w:'Rauchschwalbe', e:'🐦', s:19, sl:'Länge mit Schwanz', g:'ca. 20 g', a:'meist 2–4 Jahre', h:['🐄 Ställe','🌾 Wiesen','💧 Gewässer'], f:['🦟 Fliegende Insekten'],
+  x:'Sie fängt ihre Nahrung im Flug – oft dicht über dem Boden oder dem Wasser.',
+  d:'Die Rauchschwalbe ist ein Zugvogel und überwintert im Süden Afrikas.',
+  erk:'Rote Stirn und Kehle, blauschwarzer Rücken, sehr lange Schwanzspieße.',
+  bed:'Sie fängt Unmengen Mücken und Fliegen.',
+  tipp:'Bauernregel: Fliegen Schwalben tief, kommt oft Regen – dann fliegen auch die Insekten tief.'},
+ {n:'Graureiher', l:'Ardea cinerea', w:'Graureiher', e:'🪶', s:175, sl:'Flügelspannweite', g:'1–2 kg', a:'bis über 20 Jahre', h:['🏞️ Ufer','💧 Teiche','🌾 Wiesen'], f:['🐟 Fische','🐭 Mäuse','🐸 Frösche'],
+  x:'Im Flug zieht er den Hals S-förmig ein – Störche fliegen mit ausgestrecktem Hals.',
+  d:'Der Graureiher ist ein großer, grauer Schreitvogel.',
+  erk:'Grau mit weißem Kopf und schwarzem Streifen, langer Hals, dolchartiger gelber Schnabel.',
+  bed:'Er brütet in Kolonien auf hohen Bäumen.',
+  tipp:'Er steht oft minutenlang reglos im Wasser und wartet auf Fische.'},
+ {n:'Turmfalke', l:'Falco tinnunculus', w:'Turmfalke', e:'🦅', s:75, sl:'Flügelspannweite', g:'ca. 200 g', a:'meist 3–5 Jahre', h:['🌾 Felder','🏘️ Kirchtürme','🛣️ Straßenränder'], f:['🐭 Mäuse','🦗 Insekten','🦎 Eidechsen'],
+  x:'Er kann im „Rüttelflug“ fast auf der Stelle in der Luft stehen und nach Mäusen spähen.',
+  d:'Der Turmfalke ist ein kleiner, häufiger Greifvogel.',
+  erk:'Rotbrauner Rücken mit dunklen Flecken, langer Schwanz, Männchen mit grauem Kopf.',
+  bed:'Er jagt sehr viele Mäuse.',
+  tipp:'Achte über Feldern auf einen Vogel, der flatternd in der Luft „steht“.'},
+ {n:'Stockente', l:'Anas platyrhynchos', w:'Stockente', e:'🦆', s:58, sl:'Körperlänge', g:'1–1,3 kg', a:'meist 3–5 Jahre', h:['💧 Teiche','🏞️ Seen','🌊 Flüsse'], f:['🌱 Wasserpflanzen','🐌 Schnecken','🌾 Samen'],
+  x:'Beim „Gründeln“ steckt sie den Kopf unter Wasser und streckt das Hinterteil in die Luft.',
+  d:'Die Stockente ist die häufigste Ente und die Urform der Hausente.',
+  erk:'Erpel mit grün schillerndem Kopf und weißem Halsring, Weibchen braun gesprenkelt, blauer Flügelspiegel.',
+  bed:'Enten verbreiten Samen von Wasserpflanzen zwischen Gewässern.',
+  tipp:'Bitte kein Brot füttern – es macht Enten krank und verschmutzt das Wasser.'},
+ {n:'Strauß', l:'Struthio camelus', w:'Afrikanischer Strauß', e:'🐦', s:250, sl:'Körperhöhe', g:'bis 150 kg', a:'30–40 Jahre', h:['🌍 Savanne','🏜️ Halbwüste'], f:['🌿 Pflanzen','🌾 Samen','🦗 Insekten'],
+  x:'Er legt die größten Eier aller lebenden Vögel – ein Ei wiegt etwa 1,5 kg.',
+  d:'Der Strauß ist der größte Vogel der Welt. Fliegen kann er nicht.',
+  erk:'Sehr lange Beine mit nur zwei Zehen, langer nackter Hals, Männchen schwarz-weiß.',
+  bed:'Mit seinen scharfen Augen warnt er oft auch Zebras und Antilopen vor Raubtieren.',
+  tipp:'Er rennt bis zu 70 km/h – schneller als jeder andere Vogel zu Fuß.'}
+],
+fische:[
+ {n:'Wels', l:'Silurus glanis', w:'Europäischer Wels', e:'🐟', s:160, sl:'Länge', g:'20–60 kg', a:'oft über 20 Jahre', h:['🏞️ Große Seen','🌊 Langsame Flüsse'], f:['🐟 Fische','🐸 Frösche','🦆 Wasservögel'],
+  x:'Er ist der größte reine Süßwasserfisch Europas und kann über 2,5 m lang werden.',
+  d:'Der Wels ist ein nachtaktiver Raubfisch ohne Schuppen.',
+  erk:'Riesiges breites Maul, sechs Barteln (zwei sehr lange), schleimige dunkle Haut, langer Schwanz.',
+  bed:'Er profitiert von wärmeren Gewässern und breitet sich aus.',
+  tipp:'Mit seinen Barteln „schmeckt“ er Beute im trüben Wasser.'},
+ {n:'Zander', l:'Sander lucioperca', w:'Zander', e:'🐟', s:60, sl:'Länge', g:'1–5 kg', a:'10–15 Jahre', h:['🏞️ Seen','🌊 Trübe Flüsse'], f:['🐟 Kleine Fische'],
+  x:'Seine großen, glasigen Augen sehen in der Dämmerung und im trüben Wasser besonders gut.',
+  d:'Der Zander ist ein Raubfisch aus der Familie der Barsche und ein beliebter Speisefisch.',
+  erk:'Schlanker grauer Körper mit dunklen Querbändern, zwei Rückenflossen, spitze „Hundszähne“.',
+  bed:'Er reguliert die Bestände von Weißfischen.',
+  tipp:'Zander jagen meist am Abend und in der Nacht.'},
+ {n:'Hering', l:'Clupea harengus', w:'Atlantischer Hering', e:'🐟', s:30, sl:'Länge', g:'bis 0,5 kg', a:'bis 20 Jahre', h:['🌊 Nordsee','🌊 Ostsee','🌊 Nordatlantik'], f:['🦐 Plankton','🐟 Fischlarven'],
+  x:'Heringe ziehen in riesigen Schwärmen mit Millionen von Tieren durchs Meer.',
+  d:'Der Hering ist einer der wichtigsten Speisefische Nordeuropas.',
+  erk:'Silbern glänzend, blaugrüner Rücken, schlanker Körper, eine Rückenflosse in der Mitte.',
+  bed:'Er ist Futter für Wale, Robben, Seevögel und große Fische.',
+  tipp:'Matjes, Bismarckhering und Rollmops sind alles Heringe.'},
+ {n:'Schleie', l:'Tinca tinca', w:'Schleie', e:'🐟', s:35, sl:'Länge', g:'0,5–2 kg', a:'bis 20 Jahre', h:['💧 Ruhige Teiche','🌿 Pflanzenreiche Seen'], f:['🪱 Würmer','🐌 Schnecken','🦟 Larven'],
+  x:'Sie überlebt sogar in Teichen mit sehr wenig Sauerstoff.',
+  d:'Die Schleie ist ein ruhiger Friedfisch, der am schlammigen Grund lebt.',
+  erk:'Olivgrün bis goldbraun, sehr kleine Schuppen in dicker Schleimhaut, rote Augen, zwei kurze Barteln.',
+  bed:'Sie ist ein beliebter Teichfisch in Bayern.',
+  tipp:'Früher hieß sie „Doktorfisch“ – man glaubte, ihr Schleim heile andere Fische.'},
+ {n:'Rotauge', l:'Rutilus rutilus', w:'Rotauge', e:'🐟', s:25, sl:'Länge', g:'0,1–0,5 kg', a:'bis 15 Jahre', h:['🏞️ Seen','🌊 Flüsse','💧 Teiche'], f:['🦐 Plankton','🌱 Pflanzen','🦟 Larven'],
+  x:'Es ist einer der häufigsten Fische in Deutschland und lebt in großen Schwärmen.',
+  d:'Das Rotauge ist ein kleiner, silberner Friedfisch.',
+  erk:'Silbrig glänzend, leuchtend rote Iris im Auge, rötliche Flossen.',
+  bed:'Es ist Hauptnahrung für Hecht, Barsch, Kormoran und Eisvogel.',
+  tipp:'Die Rotfeder sieht ähnlich aus – ihr Auge ist aber eher goldgelb.'},
+ {n:'Huchen', l:'Hucho hucho', w:'Huchen', e:'🐟', s:100, sl:'Länge', g:'bis 20 kg', a:'bis 15 Jahre', h:['🌊 Donau und Nebenflüsse','⛰️ Kühle, schnelle Flüsse'], f:['🐟 Fische','🐸 Frösche'],
+  x:'Er heißt auch „Donaulachs“ und kommt von Natur aus nur im Donaugebiet vor.',
+  d:'Der Huchen ist der größte Lachsfisch Mitteleuropas.',
+  erk:'Langer, runder Körper, rötlich-kupferner Glanz, viele kleine schwarze Punkte.',
+  bed:'Er ist stark gefährdet, weil Wehre und Kraftwerke seine Laichplätze zerstören.',
+  tipp:'In Bayern wird er mit Schutzprogrammen in Flüssen wieder angesiedelt.'},
+ {n:'Mondfisch', l:'Mola mola', w:'Mondfisch', e:'🐟', s:250, sl:'Höhe mit Flossen', g:'bis über 2 Tonnen', a:'unbekannt', h:['🌊 Warme und gemäßigte Meere'], f:['🪼 Quallen','🦐 Kleine Krebse'],
+  x:'Er ist der schwerste Knochenfisch der Welt und legt Hunderte Millionen Eier.',
+  d:'Der Mondfisch sieht aus wie ein riesiger Kopf mit Flossen.',
+  erk:'Scheibenförmiger, seitlich flacher Körper, hohe Rücken- und Afterflosse, kein richtiger Schwanz.',
+  bed:'Er hilft, Quallenbestände zu begrenzen.',
+  tipp:'Er „sonnt“ sich flach an der Oberfläche – vermutlich zum Aufwärmen nach tiefen Tauchgängen.'}
+],
+reptilien:[
+ {n:'Bergmolch', l:'Ichthyosaura alpestris', w:'Bergmolch', e:'🦎', s:10, sl:'Gesamtlänge', g:'ca. 5 g', a:'bis 10 Jahre', h:['💧 Tümpel im Wald','🌲 Feuchte Wälder','⛰️ Bergland'], f:['🦟 Insektenlarven','🪱 Würmer','🦐 Kleinkrebse'],
+  x:'Der Bauch ist leuchtend orange – ganz ohne Flecken.',
+  d:'Der Bergmolch ist ein Schwanzlurch, der im Frühjahr ins Wasser wandert.',
+  erk:'Dunkler Rücken, ungefleckter orangeroter Bauch, Männchen zur Paarungszeit mit blauen Flanken.',
+  bed:'Molche fressen viele Mückenlarven.',
+  tipp:'Ein Gartenteich ohne Fische ist ein toller Lebensraum für Molche.'},
+ {n:'Laubfrosch', l:'Hyla arborea', w:'Europäischer Laubfrosch', e:'🐸', s:5, sl:'Körperlänge', g:'5–10 g', a:'bis 10 Jahre', h:['🌿 Hecken & Büsche','💧 Sonnige Teiche'], f:['🦗 Insekten','🕷️ Spinnen'],
+  x:'Er ist für seine Größe einer der lautesten Frösche Europas – sein Ruf ist kilometerweit zu hören.',
+  d:'Der Laubfrosch ist ein kleiner, grüner Kletterkünstler.',
+  erk:'Leuchtend grün, dunkler Streifen an der Seite, Haftscheiben an den Fingern.',
+  bed:'Er ist in vielen Gegenden selten geworden und streng geschützt.',
+  tipp:'Mit seinen Haftscheiben klettert er sogar an glatten Blättern hoch.'},
+ {n:'Blindschleiche', l:'Anguis fragilis', w:'Blindschleiche', e:'🐍', s:45, sl:'Gesamtlänge', g:'20–50 g', a:'oft über 20 Jahre', h:['🌲 Waldränder','🏡 Gärten','🪨 Steinhaufen'], f:['🐌 Nacktschnecken','🪱 Regenwürmer'],
+  x:'Sie sieht aus wie eine Schlange, ist aber eine Echse ohne Beine – und sie ist nicht blind!',
+  d:'Die Blindschleiche ist eine harmlose, beinlose Echse.',
+  erk:'Glänzend kupfer- bis bronzefarben, glatte Schuppen, kann mit den Augen blinzeln (Schlangen nicht).',
+  bed:'Sie frisst sehr viele Nacktschnecken – ein Freund jedes Gärtners.',
+  tipp:'Wie Eidechsen kann sie bei Gefahr den Schwanz abwerfen.'},
+ {n:'Teichfrosch', l:'Pelophylax kl. esculentus', w:'Teichfrosch', e:'🐸', s:10, sl:'Körperlänge', g:'30–60 g', a:'bis 12 Jahre', h:['💧 Teiche','🏞️ Seeufer','🌿 Gräben'], f:['🦗 Insekten','🕷️ Spinnen','🐌 Schnecken'],
+  x:'Die Männchen quaken mit zwei weißen Schallblasen an den Mundwinkeln – das typische Froschkonzert.',
+  d:'Der Teichfrosch ist ein grüner Wasserfrosch, der fast immer am Wasser bleibt.',
+  erk:'Grün mit dunklen Flecken, hellgrüner Streifen auf dem Rücken, spitzer Kopf.',
+  bed:'Er ist Nahrung für Störche, Reiher und Ringelnattern.',
+  tipp:'An warmen Abenden im Mai und Juni hörst du sein lautes Quaken.'},
+ {n:'Jemenchamäleon', l:'Chamaeleo calyptratus', w:'Jemenchamäleon', e:'🦎', s:50, sl:'Gesamtlänge', g:'90–180 g', a:'5–8 Jahre', h:['🌳 Bäume & Büsche','🏜️ Arabische Halbinsel'], f:['🦗 Insekten'],
+  x:'Seine Zunge schießt blitzschnell heraus und ist länger als sein Körper.',
+  d:'Das Jemenchamäleon ist ein Baumbewohner aus Jemen und Saudi-Arabien.',
+  erk:'Hoher Helm auf dem Kopf, Greifschwanz, Zangenfüße, Augen bewegen sich unabhängig voneinander.',
+  bed:'Es wird oft als Terrarientier gehalten – das braucht viel Fachwissen.',
+  tipp:'Chamäleons ändern die Farbe vor allem bei Stimmung und Temperatur, nicht zur Tarnung.'},
+ {n:'Galápagos-Riesenschildkröte', l:'Chelonoidis niger', w:'Galápagos-Riesenschildkröte', e:'🐢', s:120, sl:'Panzerlänge', g:'bis über 250 kg', a:'über 100 Jahre', h:['🏝️ Galápagos-Inseln'], f:['🌵 Kakteen','🌿 Gräser','🍃 Blätter'],
+  x:'Sie gehört zu den langlebigsten Tieren der Welt und kann über 100 Jahre alt werden.',
+  d:'Die Galápagos-Riesenschildkröte ist die größte lebende Landschildkröte.',
+  erk:'Riesiger, gewölbter oder sattelförmiger Panzer, langer Hals, säulenartige Beine.',
+  bed:'Sie half Charles Darwin, seine Evolutionstheorie zu entwickeln.',
+  tipp:'Sie kann monatelang ohne Futter und Wasser überleben.'},
+ {n:'Komodowaran', l:'Varanus komodoensis', w:'Komodowaran', e:'🦎', s:250, sl:'Länge', g:'bis 90 kg', a:'ca. 30 Jahre', h:['🏝️ Indonesische Inseln'], f:['🦌 Hirsche','🐗 Wildschweine','🍖 Aas'],
+  x:'Er ist die größte Echse der Welt und hat einen giftigen Biss.',
+  d:'Der Komodowaran ist ein riesiger Raubwaran auf wenigen Inseln Indonesiens.',
+  erk:'Grau-brauner, schwerer Körper, gespaltene gelbe Zunge, kräftiger Schwanz.',
+  bed:'Er ist gefährdet und lebt im Komodo-Nationalpark.',
+  tipp:'Mit der Zunge riecht er Aas über mehrere Kilometer.'}
+],
+insekten:[
+ {n:'Hornisse', l:'Vespa crabro', w:'Hornisse', e:'🐝', s:3, sl:'Körperlänge (Königin bis 3,5 cm)', g:'ca. 0,5 g', a:'Arbeiterin wenige Wochen', h:['🌳 Hohle Bäume','🏠 Dachböden','🌲 Waldränder'], f:['🦗 Insekten','🍯 Baumsaft','🍑 Fallobst'],
+  x:'Hornissen sind friedlicher als Wespen und interessieren sich nicht für deinen Kuchen.',
+  d:'Die Hornisse ist die größte Faltenwespe Europas.',
+  erk:'Groß, rotbraune Brust, gelber Hinterleib mit braunen Bändern, gelber Kopf.',
+  bed:'Sie fängt sehr viele Wespen, Fliegen und Schädlinge und ist geschützt.',
+  tipp:'Mehr als 2–3 Meter Abstand zum Nest halten, dann bleibt sie ruhig.'},
+ {n:'Zitronenfalter', l:'Gonepteryx rhamni', w:'Zitronenfalter', e:'🦋', s:5.5, sl:'Flügelspannweite', g:'unter 1 g', a:'bis 1 Jahr', h:['🌳 Waldränder','🌸 Wiesen','🏡 Gärten'], f:['🌸 Nektar (Falter)','🌿 Faulbaum (Raupe)'],
+  x:'Er überwintert ungeschützt draußen und übersteht dank einer Art Frostschutzmittel sogar Minusgrade.',
+  d:'Der Zitronenfalter ist oft der erste Schmetterling im Frühling.',
+  erk:'Männchen leuchtend zitronengelb, Weibchen blass grünlich-weiß, spitze Flügelzipfel, kleiner oranger Punkt.',
+  bed:'Er ist einer der langlebigsten Schmetterlinge Europas.',
+  tipp:'Schon an sonnigen Februartagen kannst du ihn sehen.'},
+ {n:'Maikäfer', l:'Melolontha melolontha', w:'Feldmaikäfer', e:'🪲', s:2.5, sl:'Körperlänge', g:'ca. 1 g', a:'Larve 3–4 Jahre, Käfer 4–7 Wochen', h:['🌳 Laubbäume','🌾 Wiesen (Larven im Boden)'], f:['🍃 Blätter (Käfer)','🌱 Wurzeln (Engerling)'],
+  x:'Die Larve, der „Engerling“, lebt 3 bis 4 Jahre im Boden – der Käfer nur wenige Wochen.',
+  d:'Der Maikäfer erscheint im Mai und fliegt in der Abenddämmerung.',
+  erk:'Braune Flügeldecken, schwarzer Halsschild, fächerartige Fühler, weiße Dreiecke an der Seite.',
+  bed:'In manchen Jahren gibt es sehr viele Maikäfer („Maikäferjahr“).',
+  tipp:'An den Fühlerfächern erkennst du das Geschlecht: Männchen haben 7 Blättchen, Weibchen 6.'},
+ {n:'Große Königslibelle', l:'Anax imperator', w:'Große Königslibelle', e:'🦟', s:7.5, sl:'Körperlänge', g:'unter 1 g', a:'Larve 1–2 Jahre, Libelle wenige Wochen', h:['💧 Teiche','🏞️ Seen'], f:['🦟 Mücken','🦋 Fliegende Insekten'],
+  x:'Libellen gehören zu den besten Fliegern: Sie können sogar rückwärts fliegen und in der Luft stehen.',
+  d:'Die Große Königslibelle ist eine der größten Libellen Deutschlands.',
+  erk:'Grüne Brust, leuchtend blauer Hinterleib (Männchen) mit schwarzem Strich, riesige Augen.',
+  bed:'Libellen und ihre Larven fressen viele Mücken.',
+  tipp:'Libellen stechen nicht – sie sind für Menschen völlig harmlos.'},
+ {n:'Ohrwurm', l:'Forficula auricularia', w:'Gemeiner Ohrwurm', e:'🪲', s:1.5, sl:'Körperlänge', g:'winzig', a:'ca. 1 Jahr', h:['🏡 Gärten','🪨 Unter Steinen','🌸 In Blüten'], f:['🐛 Blattläuse','🌿 Pflanzenreste'],
+  x:'Er kriecht nicht in Ohren! Der Name kommt vermutlich von einem alten Heilmittel.',
+  d:'Der Ohrwurm ist ein nachtaktives Insekt mit einer Zange am Hinterleib.',
+  erk:'Braun, länglich, deutliche Zange am Ende des Hinterleibs, kurze Flügeldecken.',
+  bed:'Er frisst viele Blattläuse – ein Nützling im Obstgarten.',
+  tipp:'Ein mit Stroh gefüllter Blumentopf, umgedreht in den Baum gehängt, ist ein Ohrwurm-Hotel.'},
+ {n:'Stubenfliege', l:'Musca domestica', w:'Große Stubenfliege', e:'🪰', s:0.7, sl:'Körperlänge', g:'winzig', a:'2–4 Wochen', h:['🏠 Häuser','🐄 Ställe','🗑️ Abfälle'], f:['🍯 Zucker','🍖 Flüssige Nahrung'],
+  x:'Sie schmeckt mit den Füßen – deshalb landet sie auf allem, was nach Essen riecht.',
+  d:'Die Stubenfliege lebt fast überall dort, wo Menschen leben.',
+  erk:'Grau, vier dunkle Längsstreifen auf der Brust, große rote Augen.',
+  bed:'Sie kann Krankheitserreger übertragen, ist aber auch Futter für Schwalben und Spinnen.',
+  tipp:'Lebensmittel abdecken – Fliegen spucken Verdauungssaft auf ihr Essen.'},
+ {n:'Schwalbenschwanz', l:'Papilio machaon', w:'Schwalbenschwanz (Schmetterling)', e:'🦋', s:7, sl:'Flügelspannweite', g:'unter 1 g', a:'wenige Wochen (Falter)', h:['🌸 Blumenwiesen','⛰️ Hügel','🏡 Gärten'], f:['🌸 Nektar (Falter)','🥕 Wilde Möhre, Dill (Raupe)'],
+  x:'Seine Raupe hat eine orangefarbene „Nackengabel“, aus der sie bei Gefahr einen stinkenden Duft verströmt.',
+  d:'Der Schwalbenschwanz ist einer der größten und schönsten Tagfalter Deutschlands.',
+  erk:'Gelb mit schwarzem Muster, blaue Flecken und ein roter Augenfleck hinten, „Schwänzchen“ an den Hinterflügeln.',
+  bed:'Er ist geschützt und braucht blütenreiche Wiesen.',
+  tipp:'Pflanze Dill oder Fenchel – vielleicht legt ein Weibchen dort Eier.'}
+],
+baeume:[
+ {n:'Weißtanne', l:'Abies alba', w:'Weißtanne', e:'🌲', s:5000, sl:'Höhe (max.)', g:'', a:'bis 600 Jahre', h:['⛰️ Bergmischwald','🌲 Bayerischer Wald'], f:['🌲 Flache, weiche Nadeln','🌰 Aufrechte Zapfen'],
+  x:'Tannenzapfen stehen aufrecht und zerfallen am Baum – ganze Tannenzapfen findest du am Boden fast nie!',
+  d:'Die Weißtanne ist einer der höchsten Bäume Deutschlands.',
+  erk:'Flache Nadeln mit zwei weißen Streifen unten, silbergraue glatte Rinde, aufrechte Zapfen.',
+  bed:'Mit ihrer tiefen Pfahlwurzel ist sie sturmfester als die Fichte.',
+  tipp:'„Die Fichte sticht, die Tanne nicht.“'},
+ {n:'Rosskastanie', l:'Aesculus hippocastanum', w:'Gewöhnliche Rosskastanie', e:'🌳', s:2500, sl:'Höhe (max.)', g:'', a:'bis 300 Jahre', h:['🍺 Biergärten','🌳 Parks','🛣️ Alleen'], f:['🖐️ Gefingerte Blätter (5–7)','🌰 Kastanien in stacheliger Hülle'],
+  x:'In bayerischen Biergärten wurden Kastanien gepflanzt, weil ihr Schatten die Bierkeller kühlte.',
+  d:'Die Rosskastanie stammt ursprünglich vom Balkan.',
+  erk:'Große handförmige Blätter, weiße Blütenkerzen im Mai, glänzend braune Kastanien in stacheliger Schale.',
+  bed:'Die Blüten sind eine gute Bienenweide.',
+  tipp:'Rosskastanien sind nicht essbar – essbar sind nur Esskastanien (Maronen).', tag:{t:'nicht essbar', c:'#f59e0b'}},
+ {n:'Eibe', l:'Taxus baccata', w:'Europäische Eibe', e:'🌲', s:1500, sl:'Höhe (max.)', g:'', a:'oft über 1.000 Jahre', h:['🌲 Schattige Wälder','🏡 Hecken & Gärten'], f:['🌲 Weiche, dunkle Nadeln','🔴 Roter Samenmantel'],
+  x:'Eiben gehören zu den ältesten Bäumen Europas – manche sind weit über 1.000 Jahre alt.',
+  d:'Die Eibe ist ein langsam wachsender, sehr giftiger Nadelbaum.',
+  erk:'Weiche, flache, dunkelgrüne Nadeln ohne weiße Streifen, rötliche Rinde, rote „Beeren“.',
+  bed:'Aus ihrem zähen Holz wurden früher Langbögen gebaut.',
+  tipp:'Fast alles an der Eibe ist giftig – auch für Pferde. Kinder warnen!', tag:{t:'giftig', c:'#ef4444'}},
+ {n:'Schwarz-Erle', l:'Alnus glutinosa', w:'Schwarz-Erle', e:'🌳', s:2500, sl:'Höhe (max.)', g:'', a:'bis 120 Jahre', h:['🏞️ Bach- und Flussufer','🌿 Sumpfwälder'], f:['🍃 Rundliche Blätter, vorn eingebuchtet','🌰 Kleine holzige Zäpfchen'],
+  x:'Erlenholz wird unter Wasser steinhart – Teile von Venedig stehen auf Holzpfählen.',
+  d:'Die Schwarz-Erle wächst am liebsten mit „nassen Füßen“ an Gewässern.',
+  erk:'Rundliche, vorn eingekerbte, klebrige Blätter, kleine schwarze Zapfen, dunkle Rinde.',
+  bed:'Ihre Wurzeln befestigen Ufer und düngen den Boden mit Stickstoff.',
+  tipp:'Frisch gefälltes Erlenholz färbt sich leuchtend orange.'},
+ {n:'Silber-Weide', l:'Salix alba', w:'Silber-Weide', e:'🌳', s:2500, sl:'Höhe (max.)', g:'', a:'bis 200 Jahre', h:['🏞️ Flussufer','🌾 Auen'], f:['🍃 Schmale, silbrige Blätter','🌿 Kätzchen im Frühling'],
+  x:'Aus Weidenrinde kennt man seit der Antike ein Mittel gegen Schmerzen – sie war das Vorbild für Aspirin.',
+  d:'Die Silber-Weide ist ein großer Baum an Flüssen und Bächen.',
+  erk:'Lange, schmale Blätter mit silbrig behaarter Unterseite, grobe Rinde.',
+  bed:'Weidenkätzchen sind im Frühjahr eine der ersten Nahrungsquellen für Bienen.',
+  tipp:'Ein abgeschnittener Weidenzweig schlägt in feuchter Erde einfach wieder Wurzeln.'},
+ {n:'Vogel-Kirsche', l:'Prunus avium', w:'Vogel-Kirsche', e:'🌸', s:2000, sl:'Höhe (max.)', g:'', a:'bis 100 Jahre', h:['🌳 Waldränder','🌲 Laubwälder'], f:['🌸 Weiße Blüten im April','🍒 Kleine rote Kirschen'],
+  x:'Sie ist die Wildform unserer Süßkirsche – Vögel lieben ihre Früchte.',
+  d:'Die Vogel-Kirsche ist ein heimischer Laubbaum mit wunderschöner Blüte.',
+  erk:'Glänzende, rötlich-graue Rinde mit waagrechten Streifen, gesägte Blätter, weiße Blütenwolken.',
+  bed:'Ihre Blüten sind wichtig für Bienen, ihre Früchte für Vögel.',
+  tipp:'Kirschbaumholz ist ein wertvolles Möbelholz mit warmem rötlichen Ton.'},
+ {n:'Riesenmammutbaum', l:'Sequoiadendron giganteum', w:'Riesenmammutbaum', e:'🌲', s:9000, sl:'Höhe (max.)', g:'', a:'über 3.000 Jahre', h:['⛰️ Kalifornien (Sierra Nevada)','🌳 Parks in Deutschland'], f:['🌲 Schuppenartige Nadeln','🌰 Eiförmige Zapfen'],
+  x:'Er ist der massigste Baum der Erde – der berühmte „General Sherman“ ist über 80 m hoch.',
+  d:'Der Riesenmammutbaum stammt aus Kalifornien und wird auch in deutschen Parks gepflanzt.',
+  erk:'Dicke, weiche, rotbraune Rinde, kegelförmige Krone, schuppige Nadeln.',
+  bed:'Seine bis zu 60 cm dicke Rinde schützt ihn vor Waldbränden.',
+  tipp:'Drück mal auf die Rinde – sie ist weich und federnd wie ein Schwamm.'}
+],
+blumen:[
+ {n:'Rotklee', l:'Trifolium pratense', w:'Rotklee', e:'🌺', s:40, sl:'Höhe', g:'', a:'mehrjährig', h:['🌾 Wiesen','🛤️ Wegränder'], f:['🌺 Blüht Mai bis September','🐄 Futterpflanze'],
+  x:'Ein vierblättriges Kleeblatt ist eine seltene Laune der Natur – meist sind es drei Blätter.',
+  d:'Der Rotklee ist eine häufige Wiesenblume und eine wichtige Futterpflanze.',
+  erk:'Kugelige rosa-rote Blütenköpfe, dreiteilige Blätter oft mit hellem Fleck.',
+  bed:'Er sammelt mit seinen Wurzeln Stickstoff und düngt so den Boden.',
+  tipp:'Hummeln lieben Rotklee – ihr langer Rüssel reicht tief in die Blüten.'},
+ {n:'Wiesen-Glockenblume', l:'Campanula patula', w:'Wiesen-Glockenblume', e:'🔔', s:50, sl:'Höhe', g:'', a:'zweijährig', h:['🌾 Wiesen','🛤️ Wegränder'], f:['🔔 Blüht Mai bis Juli','🐝 Bienenpflanze'],
+  x:'In den Glocken übernachten manchmal kleine Wildbienen.',
+  d:'Die Wiesen-Glockenblume hat violette, glockenförmige Blüten.',
+  erk:'Blauviolette, weit offene Glocken an dünnen Stielen, schmale Blätter.',
+  bed:'Manche Wildbienen sammeln nur an Glockenblumen.',
+  tipp:'Glockenblumen gibt es in Deutschland in über 20 Arten.'},
+ {n:'Schneeglöckchen', l:'Galanthus nivalis', w:'Kleines Schneeglöckchen', e:'🤍', s:15, sl:'Höhe', g:'', a:'mehrjährig (Zwiebel)', h:['🌳 Laubwälder','🏡 Gärten','🌿 Auen'], f:['🤍 Blüht Februar bis März','☠️ Giftig'],
+  x:'Es blüht oft schon, wenn noch Schnee liegt – manchmal schiebt es sich durch die Schneedecke.',
+  d:'Das Schneeglöckchen ist einer der ersten Frühlingsboten.',
+  erk:'Weiße, nickende Blüte mit drei langen äußeren und drei kurzen, grün gezeichneten inneren Blättern.',
+  bed:'Es ist im Spätwinter eine erste Nahrung für Bienen.',
+  tipp:'Die ganze Pflanze, besonders die Zwiebel, ist giftig.', tag:{t:'giftig', c:'#ef4444'}},
+ {n:'Tulpe', l:'Tulipa gesneriana', w:'Garten-Tulpe', e:'🌷', s:50, sl:'Höhe', g:'', a:'mehrjährig (Zwiebel)', h:['🏡 Gärten','🌷 Felder (Niederlande)'], f:['🌷 Blüht April bis Mai','🎨 Tausende Sorten'],
+  x:'Im 17. Jahrhundert waren Tulpenzwiebeln in den Niederlanden zeitweise so teuer wie ein Haus.',
+  d:'Die Tulpe stammt ursprünglich aus Zentralasien und ist heute das Symbol der Niederlande.',
+  erk:'Becherförmige Blüte mit sechs Blütenblättern, breite blaugrüne Blätter.',
+  bed:'Sie ist eine der wichtigsten Zierpflanzen der Welt.',
+  tipp:'Tulpen wachsen in der Vase weiter – manchmal mehrere Zentimeter.'},
+ {n:'Herbstzeitlose', l:'Colchicum autumnale', w:'Herbstzeitlose', e:'💜', s:25, sl:'Höhe', g:'', a:'mehrjährig', h:['🌾 Feuchte Wiesen'], f:['💜 Blüht im Herbst (Blätter im Frühjahr)','☠️ Tödlich giftig'],
+  x:'Sie blüht im Herbst ohne Blätter – die Blätter kommen erst im nächsten Frühjahr.',
+  d:'Die Herbstzeitlose ist eine der giftigsten Pflanzen Deutschlands.',
+  erk:'Blassviolette, krokusähnliche Blüte im Herbst; im Frühjahr breite, glänzende Blätter ohne Knoblauchduft.',
+  bed:'Ihre Blätter werden im Frühjahr mit Bärlauch verwechselt – das kann tödlich enden.',
+  tipp:'Beim Bärlauch-Sammeln jedes Blatt einzeln prüfen – nur Knoblauchduft ist sicher.', tag:{t:'tödlich giftig', c:'#dc2626'}},
+ {n:'Weiße Seerose', l:'Nymphaea alba', w:'Weiße Seerose', e:'🪷', s:150, sl:'Stiellänge (max.)', g:'', a:'mehrjährig', h:['💧 Stille Teiche','🏞️ Seen'], f:['🪷 Blüht Juni bis September','☠️ Leicht giftig'],
+  x:'Ihre Blätter schwimmen auf dem Wasser – die Luft gelangt durch Kanäle bis zu den Wurzeln im Schlamm.',
+  d:'Die Weiße Seerose ist die größte heimische Wasserblume.',
+  erk:'Große, runde, schwimmende Blätter mit Einschnitt, große weiße Blüten mit gelber Mitte.',
+  bed:'Sie bietet Fischen Schatten und Libellen Landeplätze.',
+  tipp:'Sie ist geschützt – nicht pflücken.', tag:{t:'leicht giftig', c:'#f59e0b'}},
+ {n:'Margerite', l:'Leucanthemum vulgare', w:'Wiesen-Margerite', e:'🌼', s:60, sl:'Höhe', g:'', a:'mehrjährig', h:['🌾 Wiesen','🛤️ Wegränder'], f:['🌼 Blüht Mai bis Oktober','🐝 Insektenmagnet'],
+  x:'Die Margerite sieht aus wie ein riesiges Gänseblümchen – beide sind Korbblütler.',
+  d:'Die Margerite ist eine typische Wiesenblume im Frühsommer.',
+  erk:'Große weiße Zungenblüten, gelbe Mitte, einzeln auf hohem Stängel, gezähnte Blätter.',
+  bed:'Viele Käfer, Fliegen und Bienen besuchen ihre Blüten.',
+  tipp:'„Er liebt mich, er liebt mich nicht“ – das Zupfspiel macht man meist mit Margeriten.'}
+],
+pilze:[
+ {n:'Gallenröhrling', l:'Tylopilus felleus', w:'Gallenröhrling', e:'🍄', s:15, sl:'Hutbreite (max.)', g:'', a:'', h:['🌲 Nadelwald','🌿 Saure Böden'], f:['📅 Juni bis Oktober','🤢 Extrem bitter'],
+  x:'Ein einziger Gallenröhrling macht ein ganzes Pilzgericht ungenießbar bitter.',
+  d:'Der Gallenröhrling ist der gefährlichste Doppelgänger des Steinpilzes – nicht giftig, aber bitter.',
+  erk:'Brauner Hut, Röhren erst weiß, dann rosa; dunkles, grobes Netz auf dem Stiel.',
+  bed:'Er lebt in Partnerschaft mit Nadelbäumen.',
+  tipp:'Rosa Röhren + dunkles Stielnetz = Gallenröhrling, nicht Steinpilz.', tag:{t:'ungenießbar', c:'#f59e0b'}},
+ {n:'Falscher Pfifferling', l:'Hygrophoropsis aurantiaca', w:'Falscher Pfifferling', e:'🍄', s:6, sl:'Hutbreite (max.)', g:'', a:'', h:['🌲 Nadelwald','🪵 Morsches Holz'], f:['📅 August bis November','⚠️ Kein Speisepilz'],
+  x:'Er hat echte dünne Lamellen – der Echte Pfifferling hat dicke Leisten.',
+  d:'Der Falsche Pfifferling sieht dem Echten ähnlich, ist aber kein guter Speisepilz.',
+  erk:'Orange bis orangerot, dünne, eng stehende, gegabelte Lamellen, weiches Fleisch.',
+  bed:'Er zersetzt Nadelstreu und Holz.',
+  tipp:'Er kann Magenbeschwerden machen – nicht sammeln.', tag:{t:'nicht essen', c:'#f59e0b'}},
+ {n:'Wiesen-Champignon', l:'Agaricus campestris', w:'Wiesen-Champignon', e:'🍄', s:10, sl:'Hutbreite (max.)', g:'', a:'', h:['🌾 Gedüngte Wiesen','🐄 Weiden'], f:['📅 Juli bis Oktober','🍳 Speisepilz'],
+  x:'Junge Champignons haben rosa Lamellen, ältere schokoladenbraune.',
+  d:'Der Wiesen-Champignon ist ein Verwandter des Zuchtchampignons aus dem Supermarkt.',
+  erk:'Weißer Hut, rosa bis braune Lamellen (nie weiß!), Ring am Stiel, keine Knolle.',
+  bed:'Er zersetzt Pflanzenreste in Wiesen.',
+  tipp:'Weiße Lamellen? Finger weg – das könnte ein Knollenblätterpilz sein!', tag:{t:'essbar', c:'#22c55e'}},
+ {n:'Satans-Röhrling', l:'Rubroboletus satanas', w:'Satans-Röhrling', e:'🍄', s:25, sl:'Hutbreite (max.)', g:'', a:'', h:['🌳 Laubwald auf Kalkboden','☀️ Warme Hänge'], f:['📅 Juli bis September','☠️ Giftig'],
+  x:'Er riecht im Alter unangenehm nach Aas.',
+  d:'Der Satans-Röhrling ist ein seltener, giftiger Röhrling.',
+  erk:'Hellgrauer bis weißlicher Hut, rote Poren, dicker Stiel mit rotem Netz, blaut beim Anschneiden.',
+  bed:'Er ist selten und auf kalkhaltige Böden angewiesen.',
+  tipp:'Rote Poren bei Röhrlingen: lieber stehen lassen.', tag:{t:'giftig', c:'#ef4444'}},
+ {n:'Hallimasch', l:'Armillaria mellea', w:'Honiggelber Hallimasch', e:'🍄', s:10, sl:'Hutbreite (max.)', g:'', a:'', h:['🪵 Baumstümpfe','🌳 Lebende Bäume'], f:['📅 September bis November','⚠️ Roh giftig'],
+  x:'Hallimasch-Geflechte können riesig werden – sie gehören zu den größten Lebewesen der Erde.',
+  d:'Der Hallimasch wächst büschelweise an Holz und ist ein gefürchteter Baumschädling.',
+  erk:'Honiggelbe Hüte mit dunklen Schüppchen, wächst in Büscheln, Ring am Stiel.',
+  bed:'Er befällt Bäume und lässt ihr Holz verrotten.',
+  tipp:'Roh ist er giftig – nur für Kenner und nur gut durchgegart.', tag:{t:'nur gekocht', c:'#f59e0b'}},
+ {n:'Riesenbovist', l:'Calvatia gigantea', w:'Riesenbovist', e:'⚪', s:50, sl:'Durchmesser (max.)', g:'', a:'', h:['🌾 Wiesen','🐄 Weiden','🌳 Waldränder'], f:['📅 Juli bis Oktober','🍳 Jung essbar'],
+  x:'Er kann so groß wie ein Fußball werden und Milliarden Sporen enthalten.',
+  d:'Der Riesenbovist ist eine weiße Kugel ohne Hut und Stiel.',
+  erk:'Großer, weißer, glatter Ball; jung innen ganz weiß, später gelb-olivbraun und pulvrig.',
+  bed:'Er verbreitet seine Sporen, wenn die reife Hülle aufreißt.',
+  tipp:'Nur rein weiß und fest ist er essbar – in Scheiben gebraten wie ein Schnitzel.', tag:{t:'jung essbar', c:'#22c55e'}}
+]
+};
+
+// ===== Erweiterungspaket 2: neue Bereiche =====
+const NEWCATS = [
+{id:'meer', grp:'Tiere', n:'Meerestiere', e:'🐬', c:'#38bdf8', d:'Delfine, Kraken, Quallen, Robben', fl:'Was frisst es?', hl:'Wo lebt es?', snd:1,
+ intro:{t:'Leben im Meer', e:'🌊', pts:[
+  {p:'70 % Wasser', t:'Ozeane bedecken rund 70 % der Erde – dort lebt eine riesige Vielfalt.'},
+  {p:'Salzwasser', t:'Meerestiere sind an Salzwasser angepasst. Die meisten könnten im Süßwasser nicht leben.'},
+  {p:'Plankton', t:'Winzige Algen und Tierchen treiben im Wasser – sie sind die Grundlage fast aller Nahrungsketten im Meer.'},
+  {p:'Viele Tiergruppen', t:'Im Meer leben Säugetiere, Fische, Reptilien, Weichtiere und Quallen.'},
+  {p:'Tiefsee', t:'In der Tiefsee ist es stockdunkel und eiskalt – viele Tiere leuchten dort selbst.'}]},
+ items:[
+ {n:'Großer Tümmler', l:'Tursiops truncatus', w:'Großer Tümmler', e:'🐬', s:300, sl:'Länge', g:'150–300 kg', a:'40–50 Jahre', h:['🌊 Küsten aller Meere','🌊 Mittelmeer'], f:['🐟 Fische','🦑 Tintenfische'],
+  x:'Beim Schlafen ruht immer nur eine Gehirnhälfte – die andere passt auf und denkt ans Atmen.',
+  d:'Der Große Tümmler ist der bekannteste Delfin – ein Säugetier, kein Fisch.',
+  erk:'Grauer Körper, kurzer kräftiger Schnabel, sichelförmige Rückenflosse, oft „lächelndes“ Gesicht.',
+  bed:'Delfine sind Spitzenjäger und zeigen, ob ein Meer gesund ist.',
+  tipp:'Delfine orientieren sich mit Klicklauten – ein Echo verrät ihnen, wo Fische schwimmen.'},
+ {n:'Orca (Schwertwal)', l:'Orcinus orca', w:'Schwertwal', e:'🐋', s:800, sl:'Länge (Männchen)', g:'bis 6 Tonnen', a:'50–90 Jahre', h:['🌊 Alle Meere','🧊 Polarmeere'], f:['🦭 Robben','🐟 Fische','🦈 Haie'],
+  x:'Jede Orca-Familie hat ihren eigenen „Dialekt“ aus Rufen.',
+  d:'Der Orca ist der größte Delfin der Welt.',
+  erk:'Schwarz-weiß mit weißem Augenfleck, sehr hohe Rückenflosse bei Männchen (bis 1,8 m).',
+  bed:'Als Spitzenjäger steht er ganz oben in der Nahrungskette des Meeres.',
+  tipp:'Orcas leben ihr ganzes Leben in Familiengruppen, angeführt von den ältesten Weibchen.'},
+ {n:'Krake', l:'Octopus vulgaris', w:'Gemeiner Krake', e:'🐙', s:100, sl:'Länge mit Armen', g:'3–10 kg', a:'1–2 Jahre', h:['🌊 Felsige Küsten','🪨 Höhlen am Meeresgrund'], f:['🦀 Krabben','🐚 Muscheln','🐟 Fische'],
+  x:'Ein Krake hat drei Herzen und blaues Blut.',
+  d:'Der Krake ist ein Weichtier mit acht Armen und sehr klug.',
+  erk:'Weicher Körper ohne Knochen, acht Arme mit Saugnäpfen, kann Farbe und Hautmuster blitzschnell ändern.',
+  bed:'Er ist Jäger und Beute zugleich, z. B. für Muränen und Delfine.',
+  tipp:'Kraken können Schraubgläser öffnen und durch winzige Löcher schlüpfen.'},
+ {n:'Ohrenqualle', l:'Aurelia aurita', w:'Ohrenqualle', e:'🪼', s:30, sl:'Schirmdurchmesser', g:'fast nur Wasser', a:'meist unter 1 Jahr', h:['🌊 Nordsee','🌊 Ostsee'], f:['🦐 Plankton','🐟 Fischlarven'],
+  x:'Eine Qualle besteht zu etwa 98 % aus Wasser – sie hat kein Gehirn und kein Herz.',
+  d:'Die Ohrenqualle ist die häufigste Qualle an deutschen Küsten.',
+  erk:'Durchsichtiger Schirm mit vier violetten Ringen in der Mitte, kurze Fangfäden am Rand.',
+  bed:'Sie ist Futter für Meeresschildkröten und manche Fische.',
+  tipp:'Ihr Nesselgift ist für Menschen meist harmlos – trotzdem besser nicht anfassen.'},
+ {n:'Seehund', l:'Phoca vitulina', w:'Seehund', e:'🦭', s:160, sl:'Körperlänge', g:'60–100 kg', a:'20–30 Jahre', h:['🌊 Nordsee','🏖️ Sandbänke im Wattenmeer'], f:['🐟 Plattfische','🐟 Heringe','🦐 Krebse'],
+  x:'Er kann bis zu einer halben Stunde tauchen und schläft sogar unter Wasser.',
+  d:'Der Seehund ist die häufigste Robbe im deutschen Wattenmeer.',
+  erk:'Runder Kopf mit „Hundegesicht“, V-förmige Nasenlöcher, grau gefleckt.',
+  bed:'Er ist ein Zeichen für ein gesundes Wattenmeer.',
+  tipp:'Ein allein liegendes Junges („Heuler“) nie anfassen – Abstand halten und die Seehundstation anrufen.'},
+ {n:'Seepferdchen', l:'Hippocampus guttulatus', w:'Langschnäuziges Seepferdchen', e:'🐴', s:15, sl:'Länge', g:'wenige Gramm', a:'4–5 Jahre', h:['🌊 Seegraswiesen','🌊 Mittelmeer & Atlantik'], f:['🦐 Winzige Krebse'],
+  x:'Beim Seepferdchen bekommt das Männchen die Babys – aus seiner Bauchtasche.',
+  d:'Das Seepferdchen ist ein Fisch, auch wenn es nicht so aussieht.',
+  erk:'Pferdeähnlicher Kopf, aufrechte Haltung, Greifschwanz, Knochenplatten statt Schuppen.',
+  bed:'Seepferdchen sind gefährdet, weil Seegraswiesen verschwinden.',
+  tipp:'Mit dem Schwanz halten sie sich an Seegras fest, damit die Strömung sie nicht wegträgt.'},
+ {n:'Suppenschildkröte', l:'Chelonia mydas', w:'Suppenschildkröte', e:'🐢', s:100, sl:'Panzerlänge', g:'bis 200 kg', a:'über 80 Jahre', h:['🌊 Tropische Meere','🏖️ Sandstrände (Eiablage)'], f:['🌿 Seegras','🌿 Algen'],
+  x:'Die Weibchen kehren zum Eierlegen an den Strand zurück, an dem sie selbst geschlüpft sind.',
+  d:'Die Suppenschildkröte ist eine große Meeresschildkröte, die vor allem Seegras frisst.',
+  erk:'Herzförmiger, olivbrauner Panzer, kleiner Kopf, Flossen statt Beinen.',
+  bed:'Sie ist stark gefährdet – Plastikmüll und Fischernetze sind große Gefahren.',
+  tipp:'Ihr Name kommt vom grünlichen Fett, aus dem früher Suppe gekocht wurde – heute ist sie streng geschützt.'}
+ ]},
+{id:'spinnen', grp:'Tiere', n:'Spinnen', e:'🕷️', c:'#94a3b8', d:'Acht Beine, Netze – und die Zecke', fl:'Was frisst sie?', hl:'Wo lebt sie?',
+ intro:{t:'Was ist eine Spinne?', e:'🕷️', pts:[
+  {p:'Acht Beine', t:'Spinnentiere haben acht Beine – Insekten nur sechs. Spinnen sind also keine Insekten.'},
+  {p:'Zwei Körperteile', t:'Kopfbrust und Hinterleib, verbunden durch eine schmale Taille.'},
+  {p:'Spinnwarzen', t:'Am Hinterleib sitzen Spinnwarzen – daraus kommt die Spinnenseide.'},
+  {p:'Giftklauen', t:'Fast alle Spinnen haben Gift, aber in Deutschland ist keine für Menschen gefährlich.'},
+  {p:'Verwandte', t:'Auch Zecken, Milben und Skorpione gehören zu den Spinnentieren.'}]},
+ items:[
+ {n:'Gartenkreuzspinne', l:'Araneus diadematus', w:'Gartenkreuzspinne', e:'🕷️', s:1.5, sl:'Körperlänge (Weibchen)', g:'winzig', a:'ca. 1 Jahr', h:['🏡 Gärten','🌳 Hecken','🌲 Waldränder'], f:['🦟 Fliegen','🦗 Insekten'],
+  x:'Sie baut ihr Radnetz oft jeden Tag neu – und frisst die alten Fäden auf.',
+  d:'Die Gartenkreuzspinne ist die bekannteste Netzspinne in Deutschland.',
+  erk:'Weißes Kreuz aus Punkten auf dem dicken Hinterleib, rotbraun bis gelblich.',
+  bed:'Sie fängt Unmengen Fliegen und Mücken.',
+  tipp:'Im Spätsommer glitzern ihre Netze morgens voller Tautropfen.'},
+ {n:'Große Winkelspinne', l:'Eratigena atrica', w:'Große Winkelspinne', e:'🕷️', s:1.8, sl:'Körperlänge (Beine bis 10 cm)', g:'winzig', a:'2–3 Jahre', h:['🏠 Keller','🏠 Garagen','🪨 Mauerritzen'], f:['🦗 Insekten','🦟 Fliegen'],
+  x:'Im Herbst sieht man sie oft in Wohnungen – das sind meist Männchen auf Partnersuche.',
+  d:'Die Große Winkelspinne ist die große, schnelle Spinne in Häusern.',
+  erk:'Braun, sehr lange behaarte Beine, Trichternetz in Ecken und Winkeln.',
+  bed:'Sie fängt Insekten in Haus und Keller und ist völlig harmlos.',
+  tipp:'Mit Glas und Papier fangen und hinaus in den Schuppen bringen.'},
+ {n:'Zebraspringspinne', l:'Salticus scenicus', w:'Zebraspringspinne', e:'🕷️', s:0.7, sl:'Körperlänge', g:'winzig', a:'ca. 1 Jahr', h:['🏠 Sonnige Hauswände','🪨 Mauern','🌳 Zäune'], f:['🦟 Fliegen','🦗 Kleine Insekten'],
+  x:'Sie baut kein Netz, sondern springt ihre Beute an – gesichert an einem Sicherheitsfaden.',
+  d:'Die Zebraspringspinne ist eine kleine, neugierige Jägerin mit riesigen Augen.',
+  erk:'Schwarz-weiß gestreift wie ein Zebra, zwei große Augen vorn.',
+  bed:'Sie fängt Fliegen an Hauswänden.',
+  tipp:'Halte ihr den Finger hin – sie dreht oft den Kopf und „schaut“ dich an.'},
+ {n:'Wespenspinne', l:'Argiope bruennichi', w:'Wespenspinne', e:'🕷️', s:1.5, sl:'Körperlänge (Weibchen)', g:'winzig', a:'ca. 1 Jahr', h:['🌾 Sonnige Wiesen','🌿 Brachflächen'], f:['🦗 Heuschrecken','🐝 Bienen & Wespen'],
+  x:'In ihr Netz webt sie ein auffälliges Zickzackband ein.',
+  d:'Die Wespenspinne ist eine große, auffällig gemusterte Netzspinne.',
+  erk:'Hinterleib gelb-schwarz-weiß gestreift wie eine Wespe, Netz knapp über dem Boden.',
+  bed:'Sie ist ein Zeichen für wärmere Sommer und hat sich nach Norden ausgebreitet.',
+  tipp:'Trotz Wespenfarben ist sie für Menschen harmlos.'},
+ {n:'Zecke (Holzbock)', l:'Ixodes ricinus', w:'Gemeiner Holzbock', e:'🕷️', s:0.3, sl:'Körperlänge (vollgesogen bis 1 cm)', g:'winzig', a:'2–3 Jahre', h:['🌿 Hohes Gras','🌲 Waldränder','🌳 Gebüsch'], f:['🩸 Blut von Tieren und Menschen'],
+  x:'Zecken fallen nicht von Bäumen – sie warten in Gras und Büschen und lassen sich abstreifen.',
+  d:'Der Holzbock ist die häufigste Zecke in Deutschland und ein Spinnentier.',
+  erk:'Winzig, dunkelbraun-rötlich, acht Beine; vollgesogen grau und erbsengroß.',
+  bed:'Er kann Krankheiten wie Borreliose und FSME übertragen. Bayern ist FSME-Risikogebiet.',
+  tipp:'Nach jedem Ausflug absuchen und Zecken gerade mit Pinzette oder Zeckenkarte entfernen. Impfung beim Arzt erfragen.', tag:{t:'Achtung', c:'#ef4444'}},
+ {n:'Vogelspinne', l:'Theraphosidae', w:'Vogelspinnen', e:'🕷️', s:8, sl:'Körperlänge', g:'bis über 100 g', a:'Weibchen bis über 20 Jahre', h:['🌴 Tropen','🏜️ Trockengebiete'], f:['🦗 Große Insekten','🦎 Selten kleine Wirbeltiere'],
+  x:'Zur Abwehr streift sie feine Brennhaare von ihrem Hinterleib ab.',
+  d:'Vogelspinnen sind große, behaarte Spinnen in warmen Ländern.',
+  erk:'Groß und stark behaart, dicke Beine, oft bunte Farben.',
+  bed:'Sie sind beliebte Terrarientiere.',
+  tipp:'Ihr Biss ist für Menschen meist nicht schlimmer als ein Wespenstich.'}
+ ]},
+{id:'dinos', grp:'Tiere', n:'Dinosaurier', e:'🦖', c:'#d97706', d:'Riesen der Urzeit – und der Urvogel aus Bayern', fl:'Was fraß er?', hl:'Wann & wo lebte er?',
+ intro:{t:'Was waren Dinosaurier?', e:'🦖', pts:[
+  {p:'Vor 235–66 Mio. Jahren', t:'Dinosaurier lebten im Erdmittelalter: Trias, Jura und Kreide.'},
+  {p:'Fossilien', t:'Wir kennen sie nur aus versteinerten Knochen, Spuren und Eiern.'},
+  {p:'Asteroid', t:'Vor 66 Millionen Jahren schlug ein riesiger Asteroid ein – die meisten Dinosaurier starben aus.'},
+  {p:'Vögel = Dinosaurier', t:'Vögel stammen von Dinosauriern ab. Eine Amsel ist also ein heutiger Dinosaurier!'},
+  {p:'Keine Dinos', t:'Flugsaurier und Meeresreptilien lebten zur selben Zeit, waren aber keine Dinosaurier.'}]},
+ items:[
+ {n:'Tyrannosaurus rex', l:'Tyrannosaurus rex', w:'Tyrannosaurus', e:'🦖', s:1200, sl:'Länge', g:'rund 8 Tonnen', a:'bis ca. 30 Jahre', h:['🌎 Nordamerika','⏳ vor ca. 68–66 Mio. Jahren'], f:['🦕 Große Dinosaurier','🍖 Aas'],
+  x:'Seine Zähne waren mit Wurzel bis zu 30 cm lang – so groß wie eine Banane.',
+  d:'Der T. rex war einer der größten Fleischfresser, die je an Land gelebt haben.',
+  erk:'Riesiger Kopf, kurze Arme mit nur zwei Fingern, kräftige Hinterbeine, langer Schwanz.',
+  bed:'Er ist der berühmteste Dinosaurier überhaupt.',
+  tipp:'Seine Beißkraft war stark genug, um Knochen zu zermalmen.'},
+ {n:'Triceratops', l:'Triceratops horridus', w:'Triceratops', e:'🦕', s:900, sl:'Länge', g:'6–12 Tonnen', a:'unbekannt', h:['🌎 Nordamerika','⏳ vor ca. 68–66 Mio. Jahren'], f:['🌿 Farne','🌴 Palmfarne','🌿 Pflanzen'],
+  x:'Er lebte zur selben Zeit wie der T. rex – und musste sich gegen ihn wehren.',
+  d:'Triceratops war ein großer Pflanzenfresser mit drei Hörnern.',
+  erk:'Drei Hörner im Gesicht, großer Knochenschild am Nacken, schnabelartiges Maul.',
+  bed:'Er gehört zu den letzten Dinosauriern vor dem Asteroideneinschlag.',
+  tipp:'Der Name bedeutet „Dreihorngesicht“.'},
+ {n:'Stegosaurus', l:'Stegosaurus stenops', w:'Stegosaurus', e:'🦕', s:900, sl:'Länge', g:'ca. 5 Tonnen', a:'unbekannt', h:['🌎 Nordamerika','⏳ vor ca. 155–150 Mio. Jahren'], f:['🌿 Niedrige Pflanzen'],
+  x:'Sein Gehirn war im Verhältnis zum riesigen Körper winzig.',
+  d:'Stegosaurus war ein Pflanzenfresser aus der Jurazeit mit großen Rückenplatten.',
+  erk:'Zwei Reihen großer Knochenplatten auf dem Rücken, Schwanz mit vier spitzen Stacheln.',
+  bed:'Er lebte rund 80 Millionen Jahre vor dem T. rex.',
+  tipp:'Mit seinen Schwanzstacheln konnte er sich gegen Raubsaurier verteidigen.'},
+ {n:'Brachiosaurus', l:'Brachiosaurus altithorax', w:'Brachiosaurus', e:'🦕', s:2200, sl:'Länge', g:'30–50 Tonnen', a:'unbekannt', h:['🌎 Nordamerika','⏳ vor ca. 154–153 Mio. Jahren'], f:['🌳 Blätter aus Baumkronen'],
+  x:'Mit seinem langen Hals reichte er bis in etwa 12 m Höhe – so hoch wie ein vierstöckiges Haus.',
+  d:'Brachiosaurus war ein riesiger, langhalsiger Pflanzenfresser.',
+  erk:'Sehr langer Hals, Vorderbeine länger als die Hinterbeine, kleiner Kopf.',
+  bed:'Er gehört zu den größten Landtieren, die je gelebt haben.',
+  tipp:'Im Museum für Naturkunde in Berlin steht sein naher Verwandter Giraffatitan – ein riesiges Skelett.'},
+ {n:'Velociraptor', l:'Velociraptor mongoliensis', w:'Velociraptor', e:'🦖', s:200, sl:'Länge mit Schwanz', g:'ca. 15 kg', a:'unbekannt', h:['🌏 Mongolei','⏳ vor ca. 75–71 Mio. Jahren'], f:['🦎 Kleine Tiere','🦕 Junge Dinosaurier'],
+  x:'Er war nur etwa so groß wie ein Truthahn und hatte Federn – viel kleiner als im Film.',
+  d:'Velociraptor war ein kleiner, schneller Raubsaurier.',
+  erk:'Gefiedert, lange Schnauze, große sichelförmige Kralle an jedem Fuß.',
+  bed:'Er zeigt, wie eng Raubsaurier mit Vögeln verwandt sind.',
+  tipp:'Der Name bedeutet „schneller Räuber“.'},
+ {n:'Pteranodon', l:'Pteranodon longiceps', w:'Pteranodon', e:'🦅', s:650, sl:'Flügelspannweite', g:'ca. 25 kg', a:'unbekannt', h:['🌎 Nordamerika (Küsten)','⏳ vor ca. 86–84 Mio. Jahren'], f:['🐟 Fische'],
+  x:'Pteranodon war kein Dinosaurier, sondern ein Flugsaurier!',
+  d:'Pteranodon war ein riesiger Flugsaurier über den Meeren der Kreidezeit.',
+  erk:'Riesige Hautflügel, langer zahnloser Schnabel, langer Knochenkamm am Hinterkopf.',
+  bed:'Flugsaurier waren die ersten Wirbeltiere, die fliegen konnten.',
+  tipp:'Trotz der riesigen Flügel war er sehr leicht – seine Knochen waren hohl.'},
+ {n:'Archaeopteryx', l:'Archaeopteryx lithographica', w:'Archaeopteryx', e:'🪶', s:50, sl:'Länge', g:'ca. 0,5 kg', a:'unbekannt', h:['🇩🇪 Altmühltal, Bayern','⏳ vor ca. 150 Mio. Jahren'], f:['🦗 Insekten','🦎 Kleine Tiere'],
+  x:'Alle Fossilien des „Urvogels“ wurden in Bayern gefunden – in den Kalksteinbrüchen bei Solnhofen und Eichstätt.',
+  d:'Archaeopteryx ist ein Bindeglied zwischen Dinosauriern und Vögeln.',
+  erk:'Federn und Flügel wie ein Vogel, aber Zähne, Krallen an den Flügeln und ein langer Knochenschwanz.',
+  bed:'Er war ein wichtiger Beweis für die Evolution.',
+  tipp:'Im Jura-Museum Eichstätt und im Bürgermeister-Müller-Museum Solnhofen kannst du Originale sehen.'}
+ ]},
+{id:'hunde', grp:'Haustiere', n:'Hunderassen', e:'🐕', c:'#c084fc', d:'Vom Chihuahua bis zum Berner Sennenhund', fl:'Charakter', hl:'Herkunft',
+ intro:{t:'Woher kommt der Hund?', e:'🐕', pts:[
+  {p:'Vom Wolf', t:'Alle Hunde stammen vom Wolf ab. Der Mensch hat sie vor vielen Tausend Jahren gezähmt.'},
+  {p:'Hunderte Rassen', t:'Durch Zucht entstanden Hunderte Rassen – vom Chihuahua bis zur Dogge.'},
+  {p:'Super-Nase', t:'Hunde riechen viel besser als Menschen und erschnüffeln Spuren, Drogen oder Verschüttete.'},
+  {p:'Körpersprache', t:'Schwanz, Ohren und Haltung zeigen, wie sich ein Hund fühlt.'},
+  {p:'Gezüchtet für Aufgaben', t:'Jede Rasse hatte ursprünglich einen Job: hüten, jagen, bewachen oder Gesellschaft leisten.'}]},
+ items:[
+ {n:'Deutscher Schäferhund', l:'Canis lupus familiaris', w:'Deutscher Schäferhund', e:'🐕‍🦺', s:62, sl:'Schulterhöhe', g:'22–40 kg', a:'9–13 Jahre', h:['🇩🇪 Deutschland','📅 seit 1899'], f:['🧠 Klug & lernfreudig','🛡️ Wachsam','💪 Arbeitsfreudig'],
+  x:'Er ist einer der häufigsten Polizei- und Rettungshunde der Welt.',
+  d:'Der Deutsche Schäferhund wurde ursprünglich zum Hüten von Schafen gezüchtet.',
+  erk:'Stehohren, schwarzer Sattel auf braunem oder gelbem Fell, abfallender Rücken.',
+  bed:'Ursprünglich Hütehund – heute Polizei-, Blinden-, Rettungs- und Familienhund.',
+  tipp:'Er braucht viel Bewegung und Aufgaben für den Kopf, sonst langweilt er sich.'},
+ {n:'Labrador Retriever', l:'Canis lupus familiaris', w:'Labrador Retriever', e:'🦮', s:57, sl:'Schulterhöhe', g:'25–36 kg', a:'10–12 Jahre', h:['🇨🇦 Neufundland (Kanada)','🇬🇧 Großbritannien'], f:['😊 Freundlich','🏊 Wasserratte','🍖 Verfressen'],
+  x:'Labradore lieben Wasser – zwischen ihren Zehen haben sie kleine Schwimmhäute.',
+  d:'Der Labrador ist einer der beliebtesten Familienhunde der Welt.',
+  erk:'Kurzes, dichtes Fell in Schwarz, Gelb oder Braun, dicker „Otterschwanz“, Schlappohren.',
+  bed:'Ursprünglich apportierte er für Jäger Enten aus dem Wasser – heute oft Blindenführhund.',
+  tipp:'Labradore werden schnell zu dick – auf die Futtermenge achten.'},
+ {n:'Golden Retriever', l:'Canis lupus familiaris', w:'Golden Retriever', e:'🐕', s:56, sl:'Schulterhöhe', g:'25–34 kg', a:'10–12 Jahre', h:['🏴 Schottland','📅 19. Jahrhundert'], f:['🤗 Sanft & geduldig','👨‍👩‍👧‍👦 Kinderlieb','🎾 Verspielt'],
+  x:'Er hat ein „weiches Maul“: Er trägt sogar ein rohes Ei, ohne es zu zerbrechen.',
+  d:'Der Golden Retriever ist ein sanfter, gelehriger Familienhund.',
+  erk:'Langes, goldenes Fell, Schlappohren, freundlicher Blick, buschige Rute.',
+  bed:'Ursprünglich Apportierhund für die Jagd – heute oft Therapie- und Assistenzhund.',
+  tipp:'Sein langes Fell sollte mehrmals pro Woche gebürstet werden.'},
+ {n:'Dackel', l:'Canis lupus familiaris', w:'Dackel', e:'🐕', s:25, sl:'Schulterhöhe', g:'bis 9 kg', a:'12–16 Jahre', h:['🇩🇪 Deutschland','🦊 Jagd im Bau'], f:['🦁 Mutig','🤨 Eigensinnig','🐶 Anhänglich'],
+  x:'Er heißt auch „Dachshund“, weil er Dachse und Füchse in ihren Bauen aufspüren sollte.',
+  d:'Der Dackel ist ein kleiner, mutiger Jagdhund mit kurzen Beinen.',
+  erk:'Langer Körper, sehr kurze Beine, Schlappohren; als Kurzhaar, Rauhaar oder Langhaar.',
+  bed:'Er gilt als typisch bayerischer Hund.',
+  tipp:'Wegen des langen Rückens möglichst wenig Treppen steigen und nicht herunterspringen lassen.'},
+ {n:'Mops', l:'Canis lupus familiaris', w:'Mops', e:'🐶', s:30, sl:'Schulterhöhe', g:'6–8 kg', a:'12–15 Jahre', h:['🇨🇳 China','👑 Kaiserhof'], f:['😊 Freundlich','🛋️ Gemütlich','😂 Clownhaft'],
+  x:'Schon chinesische Kaiser hielten Möpse als Schoßhunde.',
+  d:'Der Mops ist ein kleiner, kompakter Gesellschaftshund.',
+  erk:'Plattes Gesicht mit Falten, große runde Augen, Ringelschwanz, kurzes Fell.',
+  bed:'Er wurde nur als Begleiter gezüchtet.',
+  tipp:'Durch die kurze Nase bekommen viele Möpse schlecht Luft – bei Hitze besonders aufpassen.'},
+ {n:'Berner Sennenhund', l:'Canis lupus familiaris', w:'Berner Sennenhund', e:'🐕', s:66, sl:'Schulterhöhe', g:'40–50 kg', a:'7–8 Jahre', h:['🇨🇭 Schweiz (Bern)','🐄 Bauernhöfe'], f:['🧸 Gutmütig','👨‍👩‍👧‍👦 Familienfreundlich','🛡️ Wachsam'],
+  x:'Früher zogen Berner Sennenhunde kleine Karren mit Milchkannen zur Käserei.',
+  d:'Der Berner Sennenhund ist ein großer, freundlicher Bauernhund aus der Schweiz.',
+  erk:'Dreifarbiges langes Fell: schwarz mit rotbraunen und weißen Abzeichen.',
+  bed:'Er war Hof-, Wach- und Zughund.',
+  tipp:'Er verträgt Hitze schlecht – im Sommer viel Schatten und Wasser.'},
+ {n:'Chihuahua', l:'Canis lupus familiaris', w:'Chihuahua (Hunderasse)', e:'🐕', s:20, sl:'Schulterhöhe', g:'1,5–3 kg', a:'14–16 Jahre', h:['🇲🇽 Mexiko'], f:['🦁 Mutig','📢 Laut','🐶 Anhänglich'],
+  x:'Er ist die kleinste Hunderasse der Welt.',
+  d:'Der Chihuahua ist ein winziger Hund mit großem Selbstbewusstsein.',
+  erk:'Apfelförmiger Kopf, große Augen und Ohren, kurzes oder langes Fell.',
+  bed:'Er ist benannt nach dem mexikanischen Bundesstaat Chihuahua.',
+  tipp:'Er friert schnell – im Winter hilft ein Hundemantel.'},
+ {n:'Siberian Husky', l:'Canis lupus familiaris', w:'Siberian Husky', e:'🐺', s:55, sl:'Schulterhöhe', g:'16–27 kg', a:'12–14 Jahre', h:['🇷🇺 Sibirien','❄️ Schlittenhund'], f:['🏃 Lauffreudig','😊 Freundlich','🎶 Heult gern'],
+  x:'Viele Huskys haben blaue Augen – oder sogar zwei verschiedenfarbige.',
+  d:'Der Siberian Husky ist ein ausdauernder Schlittenhund.',
+  erk:'Wolfsähnlich, dichtes Fell, Gesichtsmaske, oft blaue Augen, buschiger Schwanz.',
+  bed:'Er wurde gezüchtet, um Schlitten über weite Strecken im Schnee zu ziehen.',
+  tipp:'Huskys brauchen sehr viel Bewegung und vertragen Hitze schlecht.'}
+ ]},
+{id:'katzen', grp:'Haustiere', n:'Katzenrassen', e:'🐈', c:'#fb7185', d:'Von der Maine Coon bis zur Siamkatze – plus Wildkatze', fl:'Charakter', hl:'Herkunft',
+ intro:{t:'Woher kommt die Katze?', e:'🐈', pts:[
+  {p:'Von der Falbkatze', t:'Hauskatzen stammen von der Afrikanischen Wildkatze (Falbkatze) aus dem Nahen Osten ab.'},
+  {p:'Mäusejäger', t:'Vor rund 10.000 Jahren kamen Katzen zu den ersten Bauern – wegen der Mäuse in den Kornspeichern.'},
+  {p:'Schnurrhaare', t:'Mit den Schnurrhaaren ertasten sie, ob sie durch eine Lücke passen.'},
+  {p:'Augen im Dunkeln', t:'Eine spiegelnde Schicht im Auge lässt sie auch bei wenig Licht gut sehen – darum leuchten Katzenaugen.'},
+  {p:'Langschläfer', t:'Katzen schlafen 12 bis 16 Stunden am Tag.'}]},
+ items:[
+ {n:'Europäisch Kurzhaar', l:'Felis catus', w:'Europäisch Kurzhaar', e:'🐈', s:50, sl:'Körperlänge (ohne Schwanz)', g:'3,5–6 kg', a:'15–20 Jahre', h:['🇪🇺 Europa'], f:['🐭 Guter Mäusejäger','🌳 Unabhängig','🎾 Verspielt'],
+  x:'Sie ähnelt der typischen Hauskatze – ist aber eine eigene, gezüchtete Rasse.',
+  d:'Die Europäisch Kurzhaar ist eine robuste, natürliche Katzenrasse.',
+  erk:'Kräftig, rundlicher Kopf, kurzes dichtes Fell in fast allen Farben, oft getigert.',
+  bed:'Sie ist sehr gesund und anpassungsfähig.',
+  tipp:'Freigänger-Katzen kastrieren lassen – in vielen Gemeinden ist das sogar Pflicht.'},
+ {n:'Britisch Kurzhaar', l:'Felis catus', w:'Britisch Kurzhaar', e:'🐈', s:55, sl:'Körperlänge (ohne Schwanz)', g:'4–8 kg', a:'12–17 Jahre', h:['🇬🇧 Großbritannien'], f:['😌 Ruhig & gelassen','🛋️ Gemütlich','🤗 Freundlich'],
+  x:'Ihr Fell ist so dicht, dass es sich wie Plüsch anfühlt.',
+  d:'Die Britisch Kurzhaar ist eine kräftige, ruhige Wohnungskatze.',
+  erk:'Runder Kopf, dicke Pausbacken, kurze Nase, sehr dichtes Plüschfell, oft blaugrau mit orangen Augen.',
+  bed:'Sie ist eine der beliebtesten Rassekatzen in Deutschland.',
+  tipp:'Sie neigt zu Übergewicht – spielen hält sie fit.'},
+ {n:'Perserkatze', l:'Felis catus', w:'Perserkatze', e:'🐈', s:45, sl:'Körperlänge (ohne Schwanz)', g:'3,5–6 kg', a:'12–17 Jahre', h:['🇮🇷 Persien (Iran)','🇬🇧 Zucht in England'], f:['😌 Sehr ruhig','🛋️ Wohnungskatze','🤗 Anhänglich'],
+  x:'Sie hat eines der längsten Felle aller Katzen.',
+  d:'Die Perserkatze ist eine ruhige Langhaarkatze.',
+  erk:'Sehr langes, dichtes Fell, rundes flaches Gesicht, kleine Ohren, buschiger Schwanz.',
+  bed:'Eine der ältesten Rassekatzen.',
+  tipp:'Tägliches Kämmen ist Pflicht. Bei sehr flacher Nase können Atem- und Tränenprobleme auftreten.'},
+ {n:'Maine Coon', l:'Felis catus', w:'Maine Coon', e:'🐈', s:70, sl:'Körperlänge (ohne Schwanz)', g:'5–9 kg', a:'12–15 Jahre', h:['🇺🇸 Maine (USA)'], f:['🧸 Sanfter Riese','🎾 Verspielt','💧 Mag oft Wasser'],
+  x:'Sie gehört zu den größten Hauskatzen – mit Schwanz können Kater über 1 m lang werden.',
+  d:'Die Maine Coon ist eine große, kräftige Langhaarkatze aus Nordamerika.',
+  erk:'Sehr groß, Pinselohren wie ein Luchs, Halskrause, langer buschiger Schwanz.',
+  bed:'Ursprünglich eine robuste Hof- und Schiffskatze im kalten Maine.',
+  tipp:'Sie braucht viel Platz zum Klettern und Spielen.'},
+ {n:'Siamkatze', l:'Felis catus', w:'Siamkatze', e:'🐈', s:45, sl:'Körperlänge (ohne Schwanz)', g:'2,5–5 kg', a:'15–20 Jahre', h:['🇹🇭 Thailand (früher Siam)'], f:['🗣️ Sehr gesprächig','🤗 Anhänglich','🧠 Klug'],
+  x:'Siamkätzchen werden fast weiß geboren – die dunklen Stellen kommen erst später.',
+  d:'Die Siamkatze ist eine schlanke, elegante und sehr redselige Katze.',
+  erk:'Schlanker Körper, keilförmiger Kopf, leuchtend blaue Augen, dunkle Ohren, Gesicht, Pfoten und Schwanz.',
+  bed:'Eine der ältesten Katzenrassen Asiens.',
+  tipp:'Die Färbung hängt von der Temperatur ab: Kühlere Körperstellen werden dunkler.'},
+ {n:'Norwegische Waldkatze', l:'Felis catus', w:'Norwegische Waldkatze', e:'🐈', s:60, sl:'Körperlänge (ohne Schwanz)', g:'4–8 kg', a:'14–16 Jahre', h:['🇳🇴 Norwegen'], f:['🧗 Kletterkünstlerin','🌲 Naturverbunden','😊 Freundlich'],
+  x:'Sie kann kopfüber einen Baum hinunterklettern – das können nur wenige Katzen.',
+  d:'Die Norwegische Waldkatze ist eine große, robuste Halblanghaarkatze.',
+  erk:'Wasserabweisendes halblanges Fell, große Halskrause, buschiger Schwanz, Pinselohren.',
+  bed:'In nordischen Sagen ziehen Katzen den Wagen der Göttin Freya.',
+  tipp:'Sie liebt Klettermöglichkeiten und Freigang.'},
+ {n:'Bengalkatze', l:'Felis catus', w:'Bengalkatze', e:'🐆', s:50, sl:'Körperlänge (ohne Schwanz)', g:'4–7 kg', a:'12–16 Jahre', h:['🇺🇸 USA','🐆 Kreuzung mit Leopardkatze'], f:['⚡ Sehr aktiv','🎾 Verspielt','💧 Mag Wasser'],
+  x:'Ihr geflecktes Fell sieht aus wie das eines kleinen Leoparden und kann wie Goldstaub glitzern.',
+  d:'Die Bengalkatze entstand aus Hauskatze und Asiatischer Leopardkatze.',
+  erk:'Leopardenartige Flecken oder Rosetten, muskulöser Körper, kurzes glänzendes Fell.',
+  bed:'Eine junge, sehr lebhafte Rasse.',
+  tipp:'Sie braucht viel Beschäftigung – sonst wird sie schnell kreativ.'},
+ {n:'Ragdoll', l:'Felis catus', w:'Ragdoll', e:'🐈', s:60, sl:'Körperlänge (ohne Schwanz)', g:'4,5–9 kg', a:'12–17 Jahre', h:['🇺🇸 Kalifornien','📅 seit den 1960ern'], f:['🧸 Sehr sanft','🤗 Anhänglich','🛋️ Wohnungskatze'],
+  x:'Hebt man sie hoch, wird sie oft ganz schlaff – daher der Name „Stoffpuppe“.',
+  d:'Die Ragdoll ist eine große, sehr ruhige Halblanghaarkatze.',
+  erk:'Blaue Augen, halblanges seidiges Fell mit dunklen Abzeichen, oft weiße Pfoten.',
+  bed:'Sie gilt als besonders menschenbezogen.',
+  tipp:'Sie folgt ihren Menschen oft wie ein Hund durch die Wohnung.'},
+ {n:'Sphynx', l:'Felis catus', w:'Sphynx-Katze', e:'🐈', s:45, sl:'Körperlänge (ohne Schwanz)', g:'3,5–5 kg', a:'12–15 Jahre', h:['🇨🇦 Kanada','📅 seit 1966'], f:['🤗 Sehr anhänglich','🔥 Braucht Wärme','🎾 Verspielt'],
+  x:'Sie ist fast haarlos – ihre Haut fühlt sich an wie warmes Wildleder.',
+  d:'Die Sphynx ist eine Nacktkatze mit großen Ohren.',
+  erk:'Kaum Fell, faltige Haut, sehr große Ohren, oft keine oder kurze Schnurrhaare.',
+  bed:'Ohne Tasthaare gilt ihre Zucht in Deutschland als Qualzucht.',
+  tipp:'Sie braucht Wärme, Sonnenschutz und regelmäßiges Baden, weil sich Hautfett sammelt.'},
+ {n:'Europäische Wildkatze', l:'Felis silvestris', w:'Europäische Wildkatze', e:'🐈', s:55, sl:'Körperlänge (ohne Schwanz)', g:'3–8 kg', a:'10–15 Jahre', h:['🌳 Große Laubwälder','⛰️ Mittelgebirge'], f:['🐭 Mäuse','🐦 Kleine Vögel'],
+  x:'Sie ist keine verwilderte Hauskatze, sondern eine eigene, wilde Art – und lebt bei uns im Wald.',
+  d:'Die Europäische Wildkatze ist ein scheues Wildtier, das in Deutschland zurückkehrt.',
+  erk:'Wie eine kräftige getigerte Katze, aber buschiger Schwanz mit stumpfem schwarzem Ende und dunklen Ringen.',
+  bed:'Sie ist streng geschützt und braucht ruhige, alte Wälder.',
+  tipp:'Junge „Kätzchen“ im Wald nie mitnehmen – es könnten Wildkatzen sein.'}
+ ]},
+{id:'kraeuter', grp:'Pflanzen & Pilze', n:'Kräuter', e:'🌿', c:'#4ade80', d:'Küchen- und Heilkräuter – und der Bärlauch', fl:'Verwendung', hl:'Wo wächst es?',
+ intro:{t:'Was sind Kräuter?', e:'🌿', pts:[
+  {p:'Duft & Geschmack', t:'Kräuter enthalten ätherische Öle – die geben Duft und Geschmack.'},
+  {p:'Küchenkräuter', t:'Petersilie, Schnittlauch und Basilikum würzen unser Essen.'},
+  {p:'Heilkräuter', t:'Kamille, Pfefferminze und Salbei werden seit Jahrhunderten als Tee genutzt.'},
+  {p:'Haltbar machen', t:'Kräuter kann man trocknen, einfrieren oder in Öl einlegen.'},
+  {p:'Wildkräuter', t:'Wild sammeln nur, wenn du die Pflanze ganz sicher kennst – es gibt giftige Doppelgänger.'}]},
+ items:[
+ {n:'Bärlauch', l:'Allium ursinum', w:'Bärlauch', e:'🌿', s:30, sl:'Höhe', g:'', a:'mehrjährig', h:['🌳 Feuchte Laubwälder','🌿 Auwälder'], f:['🧄 Pesto, Suppe, Butter','📅 Sammeln März bis Mai'],
+  x:'Er heißt so, weil man glaubte, Bären fräßen ihn nach dem Winterschlaf.',
+  d:'Der Bärlauch ist ein wilder Verwandter von Knoblauch und Schnittlauch.',
+  erk:'Weiche, hellgrüne Blätter einzeln an eigenem Stiel, matte Unterseite, starker Knoblauchduft, weiße Sternblüten.',
+  bed:'Er bildet im Frühjahr riesige grüne Teppiche im Wald.',
+  tipp:'Achtung Verwechslung mit Maiglöckchen und Herbstzeitlose! Jedes Blatt einzeln riechen.', tag:{t:'essbar', c:'#22c55e'}},
+ {n:'Petersilie', l:'Petroselinum crispum', w:'Petersilie', e:'🌿', s:30, sl:'Höhe', g:'', a:'zweijährig', h:['🏡 Gemüsegarten','🪴 Blumentopf'], f:['🥗 Salate, Suppen, Kartoffeln','🍋 Viel Vitamin C'],
+  x:'Petersilie enthält mehr Vitamin C als eine Zitrone – bezogen auf das Gewicht.',
+  d:'Die Petersilie ist eines der beliebtesten Küchenkräuter in Deutschland.',
+  erk:'Krause oder glatte, dreiteilige Blätter, frischer würziger Duft.',
+  bed:'Sie ist Futterpflanze für die Raupe des Schwalbenschwanzes.',
+  tipp:'Glatte Petersilie hat mehr Geschmack, krause sieht dekorativer aus.'},
+ {n:'Basilikum', l:'Ocimum basilicum', w:'Basilikum', e:'🌿', s:40, sl:'Höhe', g:'', a:'einjährig', h:['🇮🇹 Mittelmeer','🪴 Sonnige Fensterbank'], f:['🍕 Pizza, Pasta, Pesto','🍅 Tomate-Mozzarella'],
+  x:'Basilikum ist das Hauptkraut im italienischen Pesto.',
+  d:'Basilikum ist ein wärmeliebendes Küchenkraut aus der Familie der Lippenblütler.',
+  erk:'Glänzend grüne, gewölbte Blätter, süßlich-würziger Duft, kleine weiße Blüten.',
+  bed:'Es stammt ursprünglich aus Asien.',
+  tipp:'Blätter von oben abzupfen – dann wächst die Pflanze buschiger. Nicht mitkochen, erst am Ende dazugeben.'},
+ {n:'Schnittlauch', l:'Allium schoenoprasum', w:'Schnittlauch', e:'🌿', s:30, sl:'Höhe', g:'', a:'mehrjährig', h:['🏡 Gärten','🪴 Balkon'], f:['🍞 Schnittlauchbrot','🥚 Rührei, Quark, Salat'],
+  x:'Seine lila Kugelblüten sind essbar und schmecken mild nach Zwiebel.',
+  d:'Der Schnittlauch ist ein Zwiebelgewächs mit röhrenförmigen Blättern.',
+  erk:'Hohle, dünne, grasartige Röhren, Zwiebelduft, lila Blütenkugeln.',
+  bed:'Seine Blüten sind beliebt bei Bienen und Hummeln.',
+  tipp:'Nie kochen – nur frisch über das fertige Essen streuen.'},
+ {n:'Pfefferminze', l:'Mentha × piperita', w:'Pfeffer-Minze', e:'🌿', s:60, sl:'Höhe', g:'', a:'mehrjährig', h:['🏡 Gärten','🌿 Feuchte Böden'], f:['🍵 Tee bei Bauchweh','🍹 Getränke & Desserts'],
+  x:'Das Menthol in der Minze lässt uns eine Kälte spüren, obwohl es gar nicht kalt ist.',
+  d:'Die Pfefferminze ist eine Kreuzung aus Wasserminze und Grüner Minze.',
+  erk:'Vierkantiger Stängel, gesägte Blätter, starker kühlender Duft beim Reiben.',
+  bed:'Pfefferminztee hilft gegen Blähungen und Bauchweh.',
+  tipp:'Minze wuchert stark – am besten in einen Topf pflanzen.'},
+ {n:'Rosmarin', l:'Salvia rosmarinus', w:'Rosmarin', e:'🌿', s:100, sl:'Höhe', g:'', a:'mehrjährig (Strauch)', h:['🇮🇹 Mittelmeer','☀️ Sonnige Plätze'], f:['🥔 Bratkartoffeln','🍖 Fleisch & Gemüse vom Grill'],
+  x:'Rosmarin ist ein kleiner Strauch mit Nadelblättern – er sieht fast aus wie ein Mini-Nadelbaum.',
+  d:'Rosmarin ist ein immergrüner Gewürzstrauch vom Mittelmeer.',
+  erk:'Schmale, nadelartige Blätter, oben dunkelgrün, unten weißlich, harziger Duft, hellblaue Blüten.',
+  bed:'Seine Blüten sind schon früh im Jahr eine Bienenweide.',
+  tipp:'Im Winter im Topf hell und kühl, aber frostfrei stellen.'},
+ {n:'Thymian', l:'Thymus vulgaris', w:'Echter Thymian', e:'🌿', s:30, sl:'Höhe', g:'', a:'mehrjährig', h:['🇫🇷 Mittelmeer','☀️ Trockene, sonnige Plätze'], f:['🍲 Eintopf, Pizza, Soßen','🍵 Tee bei Husten'],
+  x:'Thymiantee ist ein altes Hausmittel gegen Husten.',
+  d:'Thymian ist ein kleiner, würziger Halbstrauch.',
+  erk:'Winzige graugrüne Blätter, holzige Stängel, kleine rosa bis weiße Blüten, kräftiger Duft.',
+  bed:'Er ist eine beliebte Bienenpflanze.',
+  tipp:'Braucht wenig Wasser – lieber zu trocken als zu nass.'},
+ {n:'Lavendel', l:'Lavandula angustifolia', w:'Echter Lavendel', e:'💜', s:60, sl:'Höhe', g:'', a:'mehrjährig (Halbstrauch)', h:['🇫🇷 Provence','☀️ Sonnige Gärten'], f:['💜 Duftsäckchen gegen Motten','🍵 Beruhigender Tee'],
+  x:'In der Provence in Südfrankreich blühen im Sommer riesige violette Lavendelfelder.',
+  d:'Lavendel ist ein duftender Halbstrauch mit violetten Blütenähren.',
+  erk:'Schmale graugrüne Blätter, violette Blütenähren an langen Stielen, intensiver Duft.',
+  bed:'Er ist ein Magnet für Bienen, Hummeln und Schmetterlinge.',
+  tipp:'Nach der Blüte um ein Drittel zurückschneiden, dann bleibt er schön buschig.'}
+ ]},
+{id:'obst', grp:'Pflanzen & Pilze', n:'Obst & Gemüse', e:'🍎', c:'#f97316', d:'Woher es kommt, wann es reif ist – und was drinsteckt', fl:'Gesund, weil …', hl:'Wo wächst es?',
+ intro:{t:'Obst oder Gemüse?', e:'🍎', pts:[
+  {p:'Obst', t:'Obst sind meist süße Früchte von mehrjährigen Pflanzen wie Bäumen und Sträuchern.'},
+  {p:'Gemüse', t:'Gemüse sind essbare Pflanzenteile – Wurzeln, Knollen, Blätter, Stängel oder Früchte.'},
+  {p:'Botanik ist anders', t:'Für Botaniker sind Tomate, Gurke und Kürbis Beeren – also Früchte.'},
+  {p:'Vitamine', t:'Obst und Gemüse liefern Vitamine, Mineralstoffe und Ballaststoffe.'},
+  {p:'Saison', t:'Wer regional und nach Saison kauft, bekommt frischere Ware mit kurzen Wegen.'}]},
+ items:[
+ {n:'Apfel', l:'Malus domestica', w:'Kulturapfel', e:'🍎', k:['📅 Ernte: August bis Oktober','🔥 ca. 52 kcal / 100 g','🌳 Baum aus der Rosenfamilie'], h:['🌳 Obstgärten','🇩🇪 Bodensee, Altes Land'], f:['🍏 Ballaststoffe','💊 Vitamin C','💧 Viel Wasser'],
+  x:'Der Wildapfel, von dem unser Apfel abstammt, wächst noch heute in den Wäldern Kasachstans.',
+  d:'Der Apfel ist das beliebteste Obst in Deutschland.',
+  erk:'Runde Frucht mit Kerngehäuse, Stiel und Blütenrest, rot, gelb oder grün.',
+  bed:'Weltweit gibt es Tausende Apfelsorten.',
+  tipp:'Äpfel getrennt von Bananen lagern – sie geben ein Reifegas ab und lassen anderes Obst schneller reifen.'},
+ {n:'Erdbeere', l:'Fragaria × ananassa', w:'Garten-Erdbeere', e:'🍓', k:['📅 Ernte: Mai bis Juli','🔥 ca. 32 kcal / 100 g','🌱 Staude, wird ca. 20 cm hoch'], h:['🌾 Erdbeerfelder','🏡 Gärten & Balkon'], f:['💊 Viel Vitamin C','🔥 Wenig Kalorien'],
+  x:'Die kleinen „Kerne“ außen sind die eigentlichen Früchte – winzige Nüsschen!',
+  d:'Die Erdbeere ist botanisch eine Sammelnussfrucht.',
+  erk:'Rote, herzförmige Frucht mit gelben Nüsschen außen, grüner Blätterkranz.',
+  bed:'Sie enthält mehr Vitamin C als eine Orange.',
+  tipp:'Erst nach dem Waschen den Strunk entfernen – sonst werden sie wässrig.'},
+ {n:'Banane', l:'Musa', w:'Bananen', e:'🍌', k:['📅 Ganzjährig (Import)','🔥 ca. 90 kcal / 100 g','🌴 Staude bis 6 m hoch'], h:['🌴 Tropen','🌎 Ecuador, Costa Rica, Kolumbien'], f:['⚡ Schnelle Energie','🫀 Kalium'],
+  x:'Die Bananenpflanze ist kein Baum, sondern eine riesige Staude – und die Banane botanisch eine Beere.',
+  d:'Die Banane wächst in tropischen Ländern und wird grün geerntet.',
+  erk:'Gebogene Frucht mit gelber Schale, wächst in großen „Händen“ nach oben.',
+  bed:'Sie ist eines der wichtigsten Nahrungsmittel der Welt.',
+  tipp:'Braune Pünktchen zeigen: Jetzt ist sie besonders süß.'},
+ {n:'Kartoffel', l:'Solanum tuberosum', w:'Kartoffel', e:'🥔', k:['📅 Ernte: Juni bis Oktober','🔥 ca. 70 kcal / 100 g (gekocht)','🌱 Knolle unter der Erde'], h:['🌾 Felder','⛰️ Ursprung: Anden'], f:['⚡ Stärke','💊 Vitamin C','🫀 Kalium'],
+  x:'Friedrich der Große ließ im 18. Jahrhundert den Kartoffelanbau in Preußen fördern.',
+  d:'Die Kartoffel kommt ursprünglich aus Südamerika.',
+  erk:'Unterirdische Knolle mit „Augen“, aus denen neue Triebe wachsen.',
+  bed:'Sie ist eines der wichtigsten Grundnahrungsmittel in Deutschland.',
+  tipp:'Grüne Stellen und Keime großzügig wegschneiden – sie enthalten giftiges Solanin.'},
+ {n:'Tomate', l:'Solanum lycopersicum', w:'Tomate', e:'🍅', k:['📅 Ernte: Juli bis Oktober','🔥 ca. 18 kcal / 100 g','🌱 Pflanze bis 2 m hoch'], h:['🏡 Gewächshaus & Garten','🌎 Ursprung: Südamerika'], f:['❤️ Lycopin','💊 Vitamin C','💧 Viel Wasser'],
+  x:'Botanisch ist die Tomate eine Beere – und eine Verwandte der Kartoffel.',
+  d:'Die Tomate ist das beliebteste Gemüse in Deutschland.',
+  erk:'Rote, runde Frucht mit grünen Kelchblättern, Pflanze riecht würzig.',
+  bed:'Gekocht kann der Körper ihren roten Farbstoff Lycopin besonders gut aufnehmen.',
+  tipp:'Tomaten nicht in den Kühlschrank – dort verlieren sie Aroma.'},
+ {n:'Möhre', l:'Daucus carota subsp. sativus', w:'Möhre', e:'🥕', k:['📅 Ernte: Juni bis November','🔥 ca. 40 kcal / 100 g','🌱 Wurzel unter der Erde'], h:['🌾 Felder','🏡 Gemüsegarten'], f:['👀 Beta-Carotin (Vitamin A)','🍏 Ballaststoffe'],
+  x:'Früher waren Möhren lila oder gelb – orange Möhren wurden erst im 17. Jahrhundert in den Niederlanden üblich.',
+  d:'Die Möhre (Karotte) ist eine Wurzel.',
+  erk:'Lange orange Wurzel mit fein gefiedertem Grün oben.',
+  bed:'Aus Beta-Carotin macht unser Körper Vitamin A – wichtig für die Augen.',
+  tipp:'Mit etwas Öl oder Butter essen – dann wird das Beta-Carotin besser aufgenommen.'},
+ {n:'Kürbis', l:'Cucurbita', w:'Kürbisse', e:'🎃', k:['📅 Ernte: August bis Oktober','🔥 ca. 25–60 kcal / 100 g','🌱 Rankende Pflanze'], h:['🌾 Felder','🌎 Ursprung: Amerika'], f:['👀 Beta-Carotin','🍏 Ballaststoffe','🫀 Kalium'],
+  x:'Der Kürbis ist botanisch eine Beere – Riesenkürbisse wiegen über eine Tonne.',
+  d:'Kürbisse gehören zu den ältesten Kulturpflanzen Amerikas.',
+  erk:'Große runde Frucht mit harter Schale, orange, grün oder gelb, lange Ranken.',
+  bed:'Kürbiskerne liefern das dunkle Kürbiskernöl.',
+  tipp:'Beim Hokkaido kannst du die Schale mitessen.'},
+ {n:'Brokkoli', l:'Brassica oleracea var. italica', w:'Brokkoli', e:'🥦', k:['📅 Ernte: Juni bis Oktober','🔥 ca. 35 kcal / 100 g','🌱 Kohlpflanze'], h:['🌾 Felder','🇮🇹 Ursprung: Italien'], f:['💊 Viel Vitamin C','💊 Vitamin K','🍏 Ballaststoffe'],
+  x:'Was wir essen, sind die noch geschlossenen Blütenknospen – lässt man ihn stehen, blüht er gelb.',
+  d:'Brokkoli ist ein Kohlgemüse aus Italien.',
+  erk:'Grüne „Bäumchen“ aus dicht gedrängten Blütenknospen auf dickem Stiel.',
+  bed:'Er ist eines der vitaminreichsten Gemüse.',
+  tipp:'Dämpfen statt lange kochen – so bleiben mehr Vitamine erhalten.'}
+ ]},
+{id:'steine', grp:'Erde & Himmel', n:'Steine & Mineralien', e:'💎', c:'#a5b4fc', d:'Granit, Gold, Diamant – und Katzengold', fl:'Eigenschaften', hl:'Wo findet man ihn?',
+ intro:{t:'Mineral oder Gestein?', e:'💎', pts:[
+  {p:'Mineral', t:'Ein Mineral ist ein einheitlicher Stoff mit fester Zusammensetzung, oft als Kristall – z. B. Quarz.'},
+  {p:'Gestein', t:'Ein Gestein besteht aus mehreren Mineralen – z. B. Granit aus Quarz, Feldspat und Glimmer.'},
+  {p:'Drei Gesteinsarten', t:'Erstarrungsgestein (aus Magma), Ablagerungsgestein (Sediment) und Umwandlungsgestein.'},
+  {p:'Mohs-Härte', t:'Die Härte reicht von 1 (Talk, mit dem Fingernagel ritzbar) bis 10 (Diamant).'},
+  {p:'Kreislauf', t:'Gesteine werden über Millionen Jahre abgetragen, abgelagert, umgewandelt und wieder geschmolzen.'}]},
+ items:[
+ {n:'Quarz', l:'SiO₂ (Siliciumdioxid)', w:'Quarz', e:'🔮', k:['💪 Mohs-Härte: 7','🧪 Mineral','🎨 Farblos, weiß, violett, rosa'], h:['⛰️ Fast überall','🏖️ Als Sand am Strand'], f:['🔮 Hart, ritzt Glas','💎 Bildet Kristalle','⌚ In Quarzuhren'],
+  x:'Die meisten Sandkörner am Strand sind winzige Quarzkörner.',
+  d:'Quarz ist eines der häufigsten Minerale der Erdkruste.',
+  erk:'Glasglänzend, oft sechseckige Kristallsäulen mit Spitze, ritzt Glas.',
+  bed:'Aus Quarzsand wird Glas hergestellt.',
+  tipp:'Bergkristall, Amethyst und Rosenquarz sind alles Formen von Quarz.'},
+ {n:'Granit', l:'Tiefengestein', w:'Granit', e:'🪨', k:['💪 Sehr hart','🧪 Gestein (Quarz, Feldspat, Glimmer)','🎨 Grau, rosa, gesprenkelt'], h:['🌲 Bayerischer Wald','⛰️ Fichtelgebirge'], f:['🧱 Sehr widerstandsfähig','✨ Glitzernder Glimmer'],
+  x:'Granit ist aus Magma entstanden, das tief in der Erde langsam erstarrt ist.',
+  d:'Granit ist ein grobkörniges Erstarrungsgestein.',
+  erk:'Gesprenkelt aus hellen, rosa und dunklen Körnern, glitzernde Plättchen (Glimmer).',
+  bed:'Er wird für Pflastersteine, Küchenplatten und Grabsteine genutzt.',
+  tipp:'Im Bayerischen Wald findest du überall Granit – sogar viele Häuser sind daraus gebaut.'},
+ {n:'Kalkstein', l:'Sedimentgestein', w:'Kalkstein', e:'🪨', k:['💪 Mohs-Härte: ca. 3','🧪 Gestein aus Kalk','🎨 Weiß, grau, gelblich'], h:['⛰️ Fränkische Alb','🏞️ Altmühltal (Solnhofen)'], f:['🫧 Braust mit Säure','🐚 Oft mit Fossilien'],
+  x:'Viele Kalksteine bestehen aus Schalen und Skeletten winziger Meerestiere aus Urzeitmeeren.',
+  d:'Kalkstein ist ein Ablagerungsgestein aus Kalk (Calciumcarbonat).',
+  erk:'Hell, weich genug zum Ritzen mit dem Messer, braust mit Essig auf.',
+  bed:'Aus Kalkstein wird Zement und Branntkalk gemacht.',
+  tipp:'Tropfsteinhöhlen entstehen in Kalkstein, weil Wasser den Kalk löst.'},
+ {n:'Basalt', l:'Vulkanisches Gestein', w:'Basalt', e:'🌋', k:['💪 Hart','🧪 Erstarrte Lava','🎨 Dunkelgrau bis schwarz'], h:['🌋 Rhön, Vogelsberg','🌊 Meeresboden'], f:['⬛ Schwer und dicht','🔷 Bildet Säulen'],
+  x:'Beim Abkühlen bildet Basalt oft sechseckige Säulen – wie riesige Bleistifte.',
+  d:'Basalt ist ein dunkles Gestein aus schnell erstarrter Lava.',
+  erk:'Dunkel, sehr feinkörnig, schwer, manchmal mit kleinen Gasbläschen.',
+  bed:'Der Meeresboden besteht großteils aus Basalt.',
+  tipp:'Basalt wird als Schotter für Straßen und Bahngleise genutzt.'},
+ {n:'Diamant', l:'C (Kohlenstoff)', w:'Diamant', e:'💎', k:['💪 Mohs-Härte: 10','🧪 Mineral aus Kohlenstoff','🎨 Meist farblos'], h:['🌍 Afrika','🇷🇺 Russland','🇨🇦 Kanada'], f:['💎 Härtestes natürliches Material','✨ Starker Glanz'],
+  x:'Diamanten entstehen über 150 km tief im Erdmantel unter riesigem Druck und großer Hitze.',
+  d:'Der Diamant ist reiner Kohlenstoff – genau wie Grafit in deinem Bleistift.',
+  erk:'Funkelnder Glanz, ritzt alle anderen Minerale.',
+  bed:'Neben Schmuck werden Diamanten in Bohrern und Sägen genutzt.',
+  tipp:'Nur ein Diamant kann einen Diamanten schleifen.'},
+ {n:'Gold', l:'Au (Element)', w:'Gold', e:'🥇', k:['💪 Mohs-Härte: 2,5–3','🧪 Chemisches Element','⚖️ 19,3 g pro cm³'], h:['🏞️ Flüsse (Waschgold)','⛰️ Bergwerke'], f:['✨ Rostet nie','🔨 Sehr weich & formbar','⚡ Leitet Strom'],
+  x:'Aus einem Gramm Gold kann man einen hauchdünnen Draht von mehreren Kilometern ziehen.',
+  d:'Gold ist ein seltenes, schweres Edelmetall.',
+  erk:'Sattgelb, weich (mit Messer ritzbar), sehr schwer, läuft nie an.',
+  bed:'Es steckt in jedem Handy – in winzigen Mengen.',
+  tipp:'In manchen Flüssen kann man Gold waschen – nicht verwechseln mit Katzengold!'},
+ {n:'Pyrit (Katzengold)', l:'FeS₂ (Eisensulfid)', w:'Pyrit', e:'🟨', k:['💪 Mohs-Härte: 6–6,5','🧪 Mineral','🎨 Messinggelb, metallisch'], h:['⛰️ Bergwerke','🪨 In vielen Gesteinen'], f:['🧊 Oft Würfelkristalle','🔥 Funken mit Stahl'],
+  x:'Sein Name kommt vom griechischen Wort für Feuer – geschlagen gibt er Funken.',
+  d:'Pyrit sieht aus wie Gold, ist aber viel härter und spröder.',
+  erk:'Messinggelb, metallisch glänzend, oft perfekte Würfel, hart und spröde.',
+  bed:'Weil Goldsucher darauf hereinfielen, heißt er „Katzengold“ oder „Narrengold“.',
+  tipp:'Gold ist weich und biegbar, Pyrit hart und zerbricht.'},
+ {n:'Bernstein', l:'Fossiles Harz', w:'Bernstein', e:'🟠', k:['💪 Mohs-Härte: 2–2,5','🧪 Kein Mineral (Harz)','🎨 Honiggelb bis braun'], h:['🌊 Ostseestrand','🌲 Früher Urwälder'], f:['🪶 Sehr leicht','🔥 Brennt','🐜 Oft mit Einschlüssen'],
+  x:'Manche Bernsteine enthalten Insekten, die vor Millionen Jahren im Harz gefangen wurden.',
+  d:'Bernstein ist versteinertes Baumharz aus urzeitlichen Wäldern.',
+  erk:'Gelb bis braun, durchscheinend, leicht, fühlt sich warm an.',
+  bed:'Er wird an der Ostsee nach Stürmen an den Strand gespült.',
+  tipp:'Bernstein schwimmt in sehr salzigem Wasser – normale Steine gehen unter.'}
+ ]},
+{id:'wolken', grp:'Erde & Himmel', n:'Wolken', e:'☁️', c:'#7dd3fc', d:'Wolken erkennen und das Wetter vorhersagen', fl:'Welches Wetter?', hl:'Wo am Himmel?',
+ intro:{t:'Wie entstehen Wolken?', e:'☁️', pts:[
+  {p:'Wasserdampf', t:'Sonne lässt Wasser verdunsten – unsichtbarer Wasserdampf steigt nach oben.'},
+  {p:'Abkühlen', t:'Oben ist es kälter. Der Dampf kühlt ab und wird zu winzigen Tröpfchen oder Eiskristallen.'},
+  {p:'Drei Stockwerke', t:'Wolken gibt es tief (bis 2 km), mittelhoch (2–7 km) und hoch (über 6 km).'},
+  {p:'Haufen oder Schicht', t:'Haufenwolken (Cumulus) wachsen nach oben, Schichtwolken (Stratus) liegen flach.'},
+  {p:'Wetterboten', t:'Wer Wolken lesen kann, erkennt oft schon Stunden vorher, wie das Wetter wird.'}]},
+ items:[
+ {n:'Haufenwolke (Cumulus)', l:'Cumulus', w:'Cumulus', e:'⛅', k:['📏 Untergrenze ca. 0,5–2 km','💧 Aus Wassertröpfchen','☀️ Typisch bei Sonne'], h:['⬇️ Tief bis mittelhoch'], f:['☀️ Meist schönes Wetter','⛈️ Können zu Gewitterwolken wachsen'],
+  x:'Eine mittelgroße Haufenwolke enthält mehrere Hundert Tonnen Wasser.',
+  d:'Die Haufenwolke ist die typische weiße „Schönwetterwolke“.',
+  erk:'Weiß, scharf umrissen, oben blumenkohlartig, unten flach.',
+  bed:'Sie entsteht, wenn warme Luft vom sonnigen Boden aufsteigt.',
+  tipp:'Werden sie mittags immer höher und dunkler, kann am Nachmittag ein Gewitter kommen.'},
+ {n:'Schichtwolke (Stratus)', l:'Stratus', w:'Stratus', e:'🌫️', k:['📏 0–2 km Höhe','💧 Aus Wassertröpfchen','🌫️ Am Boden = Nebel'], h:['⬇️ Tief'], f:['☁️ Trüb und grau','🌦️ Nieselregen möglich'],
+  x:'Nebel ist eigentlich eine Stratuswolke, die direkt auf dem Boden liegt.',
+  d:'Die Schichtwolke ist eine graue, gleichförmige Wolkendecke.',
+  erk:'Graue, strukturlose Schicht, die den ganzen Himmel bedeckt; die Sonne ist höchstens als Scheibe zu sehen.',
+  bed:'Im Herbst und Winter liegt sie oft tagelang über Niederbayern.',
+  tipp:'Bei Hochnebel ist es auf Bergen oft sonnig – über der Wolkendecke.'},
+ {n:'Federwolke (Cirrus)', l:'Cirrus', w:'Cirrus (Wolke)', e:'🌤️', k:['📏 6–12 km Höhe','❄️ Aus Eiskristallen','🪶 Dünn und faserig'], h:['⬆️ Hoch'], f:['🌥️ Oft Wetterwechsel in 1–2 Tagen'],
+  x:'Federwolken bestehen nur aus Eiskristallen – dort oben ist es oft kälter als −40 °C.',
+  d:'Die Federwolke ist eine hohe, zarte Eiswolke.',
+  erk:'Weiße, feine Fasern oder Haken wie Federn oder Pferdeschwänze.',
+  bed:'Sie ist oft der erste Bote einer nahenden Schlechtwetterfront.',
+  tipp:'Bauernregel: Ziehen Federwolken auf, kommt bald Regen.'},
+ {n:'Gewitterwolke (Cumulonimbus)', l:'Cumulonimbus', w:'Cumulonimbus', e:'⛈️', k:['📏 Bis 12–15 km hoch','💧❄️ Wasser und Eis','⚡ Blitz & Donner'], h:['⬇️⬆️ Vom Boden bis ganz oben'], f:['⛈️ Gewitter','🌧️ Starkregen','🧊 Hagel','💨 Sturmböen'],
+  x:'Oben breitet sie sich oft wie ein riesiger Amboss aus.',
+  d:'Die Gewitterwolke ist die mächtigste aller Wolken.',
+  erk:'Riesiger, hoch aufgetürmter Wolkenberg, unten sehr dunkel, oben ein flacher „Amboss“.',
+  bed:'Sie bringt Blitze, Hagel und Unwetter.',
+  tipp:'Sekunden zwischen Blitz und Donner durch 3 teilen = Entfernung in km. Bei Gewitter ins Haus oder Auto!'},
+ {n:'Schäfchenwolken (Altocumulus)', l:'Altocumulus', w:'Altocumulus', e:'🐑', k:['📏 2–7 km Höhe','💧 Meist Wassertröpfchen','🐑 Viele kleine Ballen'], h:['↔️ Mittelhoch'], f:['🌤️ Oft freundlich','⛈️ Türmchen = Gewittergefahr'],
+  x:'Sie sehen aus wie eine Herde Schafe am Himmel.',
+  d:'Schäfchenwolken sind mittelhohe, flockige Wolkenfelder.',
+  erk:'Viele kleine weiße oder graue Ballen in Reihen oder Feldern, mit Lücken dazwischen.',
+  bed:'Am Morgen mit Türmchen nach oben deuten sie auf Gewitter am Nachmittag.',
+  tipp:'Bei Sonnenauf- und -untergang leuchten sie oft rosa und orange.'},
+ {n:'Regenwolke (Nimbostratus)', l:'Nimbostratus', w:'Nimbostratus', e:'🌧️', k:['📏 Basis tief, mehrere km dick','💧❄️ Wasser und Eis','🌧️ Dauerregen'], h:['⬇️⬆️ Tief bis mittelhoch'], f:['🌧️ Stundenlanger Landregen','🌨️ Im Winter Schnee'],
+  x:'Sie ist so dick, dass sie den Tag richtig düster macht.',
+  d:'Die Regenwolke ist eine dicke, dunkelgraue Wolkenschicht.',
+  erk:'Dunkelgrau, ohne Struktur, verdeckt die Sonne vollständig, fransige Unterseite.',
+  bed:'Sie bringt den Regen, den die Felder brauchen.',
+  tipp:'Anders als beim Gewitter regnet es hier gleichmäßig und lange.'},
+ {n:'Kondensstreifen', l:'Contrail', w:'Kondensstreifen', e:'✈️', k:['📏 8–12 km Höhe','❄️ Aus Eiskristallen','✈️ Von Flugzeugen'], h:['⬆️ Hoch'], f:['💨 Schnell weg = trockene Luft','🌥️ Bleiben lange = feuchte Luft'],
+  x:'Der Wasserdampf aus den Triebwerken gefriert in der eiskalten Höhe sofort zu Eiskristallen.',
+  d:'Kondensstreifen sind künstliche Wolken hinter Flugzeugen.',
+  erk:'Gerade weiße Linien am Himmel, die sich ausbreiten können.',
+  bed:'Lang anhaltende Streifen können sich zu Schleierwolken ausbreiten.',
+  tipp:'Bleiben die Streifen lange am Himmel, ist die Luft oben feucht – oft kommt Wetterwechsel.'}
+ ]},
+{id:'spuren', grp:'Entdecken', n:'Tierspuren', e:'🐾', c:'#a16207', d:'Wer war das? Abdrücke im Schnee und Matsch lesen', fl:'So erkennst du sie', hl:'Wo findest du sie?',
+ intro:{t:'Spuren lesen', e:'🐾', pts:[
+  {p:'Trittsiegel', t:'Ein einzelner Fußabdruck heißt Trittsiegel.'},
+  {p:'Pfoten', t:'Hunde und Füchse zeigen Krallen im Abdruck – Katzen ziehen ihre Krallen ein.'},
+  {p:'Hufe (Schalen)', t:'Reh, Hirsch und Wildschwein hinterlassen zwei Hälften – die „Schalen“.'},
+  {p:'Spurbild', t:'Wie die Abdrücke hintereinander liegen, verrät, ob ein Tier schleicht, trabt oder hüpft.'},
+  {p:'Beste Zeit', t:'Frischer Schnee und feuchter Matsch am Wegrand sind perfekt zum Spurenlesen.'}]},
+ items:[
+ {n:'Fuchsspur', l:'Vulpes vulpes', w:'Rotfuchs', e:'🦊', trk:'fuchs', tl:'ca. 5 cm', h:['❄️ Schnee','🌾 Feldränder','🌲 Waldwege'], f:['📏 Ca. 5 cm, oval & schmal','🐾 4 Zehen mit Krallen','➖ Abdrücke wie an einer Schnur'],
+  x:'Der Fuchs setzt die Pfoten genau in eine Linie – das nennt man „geschnürt“, wie eine Perlenkette.',
+  d:'Die Fuchsspur sieht ähnlich aus wie eine Hundespur, ist aber schmaler und gerader.',
+  erk:'Ovales Trittsiegel, vier eng stehende Zehen mit Krallen, die vorderen zwei Zehen ragen weit vor.',
+  bed:'Mit der Spur kannst du herausfinden, wo Füchse jagen.',
+  tipp:'Eine Hundespur läuft im Zickzack und ist breiter – der Fuchs läuft schnurgerade.'},
+ {n:'Katzenspur', l:'Felis catus', w:'Hauskatze', e:'🐈', trk:'katze', tl:'ca. 3,5 cm', h:['🏡 Gärten','❄️ Schnee','🌾 Felder'], f:['📏 Ca. 3,5 cm, rund','🐾 4 Zehen ohne Krallen','👣 Hinterpfote in Vorderpfote'],
+  x:'Katzen setzen die Hinterpfote genau in den Abdruck der Vorderpfote – sehr leise.',
+  d:'Die Katzenspur ist klein, rund und zeigt keine Krallen.',
+  erk:'Rundes Trittsiegel, vier runde Zehen, großer dreilappiger Ballen, keine Krallen.',
+  bed:'So erkennst du, ob die Nachbarskatze nachts im Garten war.',
+  tipp:'Keine Krallen = Katze. Krallen = Hund oder Fuchs.'},
+ {n:'Rehspur', l:'Capreolus capreolus', w:'Reh', e:'🦌', trk:'reh', tl:'ca. 4–5 cm', h:['🌲 Waldrand','🌾 Felder','❄️ Schnee'], f:['📏 Ca. 4–5 cm lang','🦶 Zwei spitze Schalen','💧 Herzform'],
+  x:'Die zwei Hälften des Hufes heißen beim Wild „Schalen“.',
+  d:'Die Rehspur ist ein kleiner, herzförmiger Paarhufer-Abdruck.',
+  erk:'Zwei schmale, spitze Hälften, die zusammen wie ein Herz aussehen; Spitze zeigt in Laufrichtung.',
+  bed:'Rehspuren findest du fast in jedem Wald.',
+  tipp:'Bei Flucht spreizen sich die Schalen und die Afterklauen drücken sich hinten mit ab.'},
+ {n:'Wildschweinspur', l:'Sus scrofa', w:'Wildschwein', e:'🐗', trk:'schwein', tl:'ca. 6–8 cm', h:['🌲 Laubwald','🌽 Felder','💧 Suhlen'], f:['📏 Ca. 6–8 cm','🦶 Zwei breite Schalen','⚫ Afterklauen hinten'],
+  x:'Hinter den Schalen sieht man zwei kleine Punkte – die Abdrücke der Afterklauen.',
+  d:'Die Wildschweinspur ist breiter und runder als die Rehspur.',
+  erk:'Zwei breite, abgerundete Schalen und dahinter seitlich zwei Abdrücke der Afterklauen.',
+  bed:'Wo Wildschweine waren, ist oft auch der Boden aufgewühlt.',
+  tipp:'Afterklauen sichtbar = Wildschwein. Beim Reh sieht man sie nur bei Flucht.'},
+ {n:'Hasenspur', l:'Lepus europaeus', w:'Feldhase', e:'🐇', trk:'hase', tl:'Hinterlauf ca. 6 cm', h:['🌾 Felder','❄️ Schnee','🌿 Wiesen'], f:['📏 Hinterläufe lang','🔺 Y-Form','🏃 Sprungspur'],
+  x:'Die langen Hinterläufe landen beim Hoppeln vor den Vorderläufen!',
+  d:'Die Hasenspur ist eine typische Sprungspur in Y-Form.',
+  erk:'Zwei kleine runde Abdrücke hintereinander (Vorderläufe), davor zwei lange nebeneinander (Hinterläufe).',
+  bed:'Hasen schlagen Haken, um Verfolger zu verwirren – das siehst du in der Spur.',
+  tipp:'Die langen Abdrücke zeigen in die Laufrichtung.'},
+ {n:'Dachsspur', l:'Meles meles', w:'Europäischer Dachs', e:'🦡', trk:'dachs', tl:'ca. 5–6 cm', h:['🌲 Wald','🕳️ Am Bau','🌳 Waldwege'], f:['📏 Ca. 5–6 cm breit','🐾 5 Zehen in einer Reihe','🔪 Lange Krallen'],
+  x:'Sie sieht aus wie eine kleine Bärenspur.',
+  d:'Die Dachsspur ist breit mit fünf Zehen und langen Krallen.',
+  erk:'Breiter, bohnenförmiger Ballen, davor fünf Zehen fast in einer geraden Reihe, lange Krallenspuren.',
+  bed:'Dachse benutzen immer dieselben Pfade – sogenannte Wechsel.',
+  tipp:'Fünf Zehen nebeneinander und breiter Ballen = Dachs.'},
+ {n:'Vogelspur (Krähe)', l:'Corvus corone', w:'Rabenkrähe', e:'🐦‍⬛', trk:'vogel', tl:'ca. 6 cm', h:['❄️ Schnee','🏖️ Schlamm & Sand','🌾 Felder'], f:['📏 Ca. 6 cm','🪶 3 Zehen vorn, 1 hinten','👣 Schreitet abwechselnd'],
+  x:'Krähen laufen Schritt für Schritt – Spatzen hüpfen mit beiden Füßen gleichzeitig.',
+  d:'Vogelspuren zeigen meist drei Zehen nach vorn und eine nach hinten.',
+  erk:'Dünne Striche: drei nach vorn gespreizt, einer nach hinten; Abdrücke versetzt hintereinander.',
+  bed:'Am Spurbild erkennst du, ob ein Vogel geht oder hüpft.',
+  tipp:'Paarweise nebeneinander = hüpfender Vogel. Hintereinander = laufender Vogel.'}
+ ]}
+];
+
+// ===== Erweiterungspaket 3: Verwechslungen =====
+const VS = {id:'vergleich', grp:'Entdecken', n:'Verwechslungen', e:'⚖️', c:'#f43f5e', d:'Zwei ähnliche Arten im direkten Vergleich', hl:'', fl:'',
+ intro:{t:'Warum vergleichen?', e:'⚖️', pts:[
+  {p:'Doppelgänger', t:'Viele Arten sehen sich zum Verwechseln ähnlich.'},
+  {p:'Gefahr', t:'Bei Pilzen und Kräutern kann eine Verwechslung lebensgefährlich sein.'},
+  {p:'Merkmale', t:'Achte immer auf mehrere Merkmale gleichzeitig – nie nur auf eines.'},
+  {p:'Merksätze', t:'Kurze Merksätze helfen dir, die Unterschiede im Kopf zu behalten.'},
+  {p:'Im Zweifel', t:'Im Zweifel nie essen und nie anfassen – lieber einen Experten fragen.'}]},
+ pairs:[
+ {a:'kraeuter-baerlauch', b:'blumen-maigloeckchen', t:'Bärlauch oder Maiglöckchen?', rows:[['Geruch','Stark nach Knoblauch','Kein Knoblauchduft'],['Blätter','Einzeln, jedes an eigenem Stiel','Zu zweit, eng umeinander aus einem Stängel'],['Blattunterseite','Matt','Glänzend'],['Blüte','Weiße Sternblüten in Dolde','Weiße, nickende Glöckchen']],
+  m:'Jedes Blatt einzeln zerreiben und riechen. Achtung: Hast du Knoblauchduft schon an den Fingern, täuscht die Nase!', why:'Maiglöckchen sind giftig, die ähnlich aussehende Herbstzeitlose sogar tödlich.', tipp:'Im Zweifel stehen lassen und Bärlauch lieber kaufen.'},
+ {a:'baeume-fichte', b:'baeume-weisstanne', t:'Fichte oder Tanne?', rows:[['Nadeln','Spitz, stechen, rundum am Zweig','Flach, weich, mit zwei weißen Streifen unten'],['Zapfen','Hängen nach unten, fallen ganz ab','Stehen aufrecht, zerfallen am Baum'],['Rinde','Rotbraun, schuppig','Silbergrau, eher glatt']],
+  m:'„Die Fichte sticht, die Tanne nicht.“', why:'Beide sind wichtige Waldbäume, reagieren aber unterschiedlich auf Sturm und Trockenheit.', tipp:'Ganze Zapfen am Boden sind fast immer Fichtenzapfen.'},
+ {a:'insekten-honigbiene', b:'insekten-wespe', t:'Biene oder Wespe?', rows:[['Körper','Behaart, bräunlich','Glatt, knallig gelb-schwarz'],['Taille','Kaum sichtbar','Schmale „Wespentaille“'],['Nahrung','Nektar und Pollen','Insekten und Süßes'],['Am Kuchen?','Kaum interessiert','Kommt gern an den Tisch']],
+  m:'Pelzig und braun = Biene. Glatt und quietschgelb = Wespe.', why:'Beide sind nützlich – Bienen bestäuben, Wespen fressen Schädlinge.', tipp:'Bei beiden ruhig bleiben, nicht schlagen.'},
+ {a:'pilze-steinpilz', b:'pilze-gallenroehrling', t:'Steinpilz oder Gallenröhrling?', rows:[['Röhren','Weiß, später gelbgrün','Weiß, später rosa'],['Netz am Stiel','Fein, hell','Grob, dunkelbraun'],['Geschmack','Mild, nussig','Extrem bitter']],
+  m:'Rosa Röhren und dunkles Netz = Gallenröhrling.', why:'Ein einziger Gallenröhrling macht das ganze Gericht ungenießbar.', tipp:'Pilze immer von einer Pilzberatung prüfen lassen.'},
+ {a:'pilze-wiesen-champignon', b:'pilze-gruener-knollenblaetterpilz', t:'Champignon oder Knollenblätterpilz?', rows:[['Lamellen','Rosa, später braun','Immer weiß'],['Stielbasis','Ohne Knolle','Knolle in häutiger Scheide'],['Hut','Weiß','Meist olivgrün (es gibt auch weiße Verwandte!)']],
+  m:'Pilz immer ganz ausdrehen und die Basis prüfen. Weiße Lamellen = Finger weg!', why:'Der Knollenblätterpilz ist tödlich giftig – schon ein Pilz kann reichen.', tipp:'Niemals Pilze nur nach Bildern oder einer App essen.'},
+ {a:'pilze-pfifferling', b:'pilze-falscher-pfifferling', t:'Echter oder Falscher Pfifferling?', rows:[['Unterseite','Dicke Leisten, laufen am Stiel herab','Dünne, echte Lamellen'],['Farbe','Dottergelb','Orange bis orangerot'],['Fleisch','Fest, weißlich','Weich, orange']],
+  m:'Leisten = Echter. Dünne Lamellen = Falscher.', why:'Der Falsche Pfifferling kann Magenbeschwerden machen.', tipp:'Mit dem Fingernagel über die Unterseite streichen: Leisten sind dick und fleischig.'},
+ {a:'saeuger-feldhase', b:'saeuger-wildkaninchen', t:'Hase oder Kaninchen?', rows:[['Ohren','Sehr lang, schwarze Spitzen','Kürzer, ohne schwarze Spitzen'],['Größe','Ca. 60 cm, bis 5 kg','Ca. 40 cm, 1,5–2 kg'],['Wohnung','Mulde im Feld, allein','Bau, in Kolonien'],['Junge','Mit Fell und offenen Augen','Nackt und blind']],
+  m:'Lange Ohren mit schwarzer Spitze = Hase.', why:'Hasen sind selten geworden und brauchen offene Felder.', tipp:'Einzelne Junghasen nicht mitnehmen – die Mutter kommt nur zum Säugen.'},
+ {a:'reptilien-ringelnatter', b:'reptilien-kreuzotter', t:'Ringelnatter oder Kreuzotter?', rows:[['Kopf','Gelbe Halbmondflecken am Hinterkopf','Dunkle X- oder V-Zeichnung'],['Pupille','Rund','Senkrechter Schlitz'],['Rücken','Einfarbig oder gefleckt','Dunkles Zickzackband'],['Gift','Ungiftig','Giftig']],
+  m:'Gelbe Halbmonde = Ringelnatter. Zickzack = Kreuzotter.', why:'Beide sind geschützt – keine Schlange darf getötet werden.', tipp:'Abstand halten und die Schlange in Ruhe lassen.'},
+ {a:'voegel-rabenkraehe', b:'voegel-kolkrabe', t:'Krähe oder Rabe?', rows:[['Größe','Ca. 47 cm','Ca. 64 cm – größer als ein Bussard'],['Schwanz im Flug','Gerade abgeschnitten','Keilförmig'],['Schnabel','Kräftig, aber schlank','Sehr massiv'],['Ruf','„Krah“','Tiefes „Korrk“']],
+  m:'Keil am Schwanz = Kolkrabe.', why:'Beide sind sehr intelligente Rabenvögel.', tipp:'In Städten siehst du fast immer Krähen, Raben eher in den Bergen.'}
+ ]};
+
 </script>
 <script>
 (function(){
@@ -654,13 +1628,20 @@ const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',
 const LS={get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
 const slug=s=>s.toLowerCase().replace(/ä/g,'ae').replace(/ö/g,'oe').replace(/ü/g,'ue').replace(/ß/g,'ss').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
 // build lessons
+const GRPS=['Tiere','Haustiere','Pflanzen & Pilze','Erde & Himmel','Entdecken'];
+const OLDG={saeuger:'Tiere',voegel:'Tiere',fische:'Tiere',reptilien:'Tiere',insekten:'Tiere',baeume:'Pflanzen & Pilze',blumen:'Pflanzen & Pilze',pilze:'Pflanzen & Pilze'};
+CATS.forEach(c=>{c.grp=OLDG[c.id];if(MORE[c.id])c.items=c.items.concat(MORE[c.id]);if(['saeuger','voegel','reptilien','insekten'].includes(c.id))c.snd=1});
+NEWCATS.forEach(c=>CATS.push(c));CATS.push(VS);
+const ORDER=['saeuger','voegel','fische','reptilien','insekten','meer','spinnen','dinos','hunde','katzen','baeume','blumen','kraeuter','obst','pilze','steine','wolken','spuren','vergleich'];
+CATS.sort((a,b)=>ORDER.indexOf(a.id)-ORDER.indexOf(b.id));
 const ALL=[];
-CATS.forEach((c,ci)=>{c.lessons=[];
+CATS.forEach((c,ci)=>{c.lessons=[];c.items=c.items||[];
  const intro={type:'intro',cat:c,id:c.id+'-grundlagen',n:c.intro.t,e:c.intro.e};c.lessons.push(intro);
  c.items.forEach(it=>{it.type='sp';it.cat=c;it.id=c.id+'-'+slug(it.n);c.lessons.push(it);ALL.push(it)});
- c.lessons.forEach((l,i)=>l.idx=i);
-});
+ });
 const byId={};CATS.forEach(c=>c.lessons.forEach(l=>byId[l.id]=l));
+VS.pairs.forEach(p=>{p.type='vs';p.cat=VS;p.n=p.t;p.e='⚖️';p.id='vergleich-'+slug(p.t);p.A=byId[p.a];p.B=byId[p.b];if(!p.A||!p.B)console.warn('pair',p.a,p.b);VS.lessons.push(p);byId[p.id]=p});
+CATS.forEach(c=>c.lessons.forEach((l,i)=>l.idx=i));
 let seen=new Set(LS.get('natur_seen',[]));
 const markSeen=id=>{if(!seen.has(id)){seen.add(id);LS.set('natur_seen',[...seen]);renderSide()}};
 const fmtN=(v,d=1)=>v.toLocaleString('de-DE',{maximumFractionDigits:d});
@@ -726,27 +1707,31 @@ const head=()=>`<header class="top"><div class="brand" onclick="go('start')"><di
 /* ---------- Home ---------- */
 function renderHome(){
  const tot=CATS.reduce((a,c)=>a+c.lessons.length,0);const best=LS.get('natur_best',0);
- let h=head()+`<section class="hero" style="--acc:#22c55e"><div class="kicker">// Lern-App</div><h1>Natur entdecken.</h1><p class="lead">${ALL.length} Arten in ${CATS.length} Bereichen – mit echten Fotos, kleinen Erklär-Videos und einem Quiz.</p>
+ let h=head()+`<section class="hero" style="--acc:#22c55e"><div class="kicker">// Lern-App</div><h1>Natur entdecken.</h1><p class="lead">${ALL.length} Arten, ${tot} Lektionen in ${CATS.length} Bereichen – mit echten Fotos, Tierstimmen, kleinen Erklär-Videos und einem Quiz.</p>
  <div class="search"><span>🔍</span><input id="hq" placeholder="Art suchen, z. B. Fuchs, Eiche, Pilz …" autocomplete="off"></div><div id="hres" class="results"></div>
- <div class="stats"><span class="chip">Gesehen <b>${[...seen].filter(i=>byId[i]).length}/${tot}</b></span><span class="chip">Quiz-Bestwert <b>${best}/10</b></span></div></section><div class="bento">`;
- CATS.forEach((c,i)=>{const n=c.lessons.filter(l=>seen.has(l.id)).length;
-  h+=`<button class="tile" style="--c:${c.c}" onclick="go('b-${c.id}')"><span class="no">0${i+1}</span><span class="ico">${c.e}</span><h3>${esc(c.n)}</h3><p>${esc(c.d)}</p><div class="bar"><i style="width:${n/c.lessons.length*100}%"></i></div><div class="prog">${n}/${c.lessons.length}</div></button>`});
- h+=`<button class="tile big" style="--c:#a78bfa" onclick="go('quiz')"><span class="no">QUIZ</span><span class="ico">🎯</span><h3>Natur-Quiz</h3><p>10 zufällige Fragen: Fotos erkennen, Wissen, Rechnen. Bestwert: ${best}/10</p></button></div>
- <div class="foot">Fotos: Wikipedia / Wikimedia Commons · Bayazit Natur-Schule</div>`;
+ <div class="stats"><span class="chip">Gesehen <b>${[...seen].filter(i=>byId[i]).length}/${tot}</b></span><span class="chip">Quiz-Bestwert <b>${best}/10</b></span><span class="chip"><b>${CATS.length}</b> Bereiche</span></div></section>
+ <button class="tile big qtile" style="--c:#a78bfa;width:100%;min-height:118px;margin-top:6px" onclick="go('quiz')"><span class="no">QUIZ</span><span class="ico">🎯</span><h3>Natur-Quiz</h3><p>10 zufällige Fragen: Fotos, Wissen, Verwechslungen, Rechnen. Bestwert: ${best}/10</p></button>`;
+ GRPS.forEach(g=>{h+=`<div class="grp-h">${esc(g.toUpperCase())}</div><div class="bento">`;
+ CATS.filter(c=>c.grp===g).forEach(c=>{const i=CATS.indexOf(c);const n=c.lessons.filter(l=>seen.has(l.id)).length;
+  h+=`<button class="tile" style="--c:${c.c}" onclick="go('b-${c.id}')"><span class="no">${String(i+1).padStart(2,'0')}</span><span class="ico">${c.e}</span><h3>${esc(c.n)}</h3><p>${esc(c.d)}</p><div class="bar"><i style="width:${n/c.lessons.length*100}%"></i></div><div class="prog">${n}/${c.lessons.length}</div></button>`});
+ h+=`</div>`});
+ h+=`
+ <div class="foot">Fotos & Tierstimmen: Wikipedia / Wikimedia Commons · Bayazit Natur-Schule</div>`;
  $('#main').innerHTML=h;const q=$('#hq');q.oninput=()=>searchInto(q.value,$('#hres'));
 }
 
 /* ---------- Bereich ---------- */
 function renderCat(c){
  const ci=CATS.indexOf(c);
- let h=head()+`<button class="back" onclick="go('start')">← Startseite</button><div class="secthead" style="--c:${c.c}"><div class="bigico">${c.e}</div><div><div class="kicker" style="color:${c.c}">BEREICH 0${ci+1}</div><h1>${esc(c.n)}</h1><div class="lead" style="font-size:13.5px">${esc(c.d)}</div></div></div>`;
+ let h=head()+`<button class="back" onclick="go('start')">← Startseite</button><div class="secthead" style="--c:${c.c}"><div class="bigico">${c.e}</div><div><div class="kicker" style="color:${c.c}">BEREICH ${String(ci+1).padStart(2,'0')} · ${esc(c.grp.toUpperCase())}</div><h1>${esc(c.n)}</h1><div class="lead" style="font-size:13.5px">${esc(c.d)}</div></div></div>`;
  if(c.id==='pilze')h+=`<div class="warn">⚠️ <b>Wichtig:</b> Pilze niemals nur mit einer App bestimmen und essen! Im Zweifel immer zu einer Pilzberatung (Pilzsachverständige der DGfM) gehen.</div>`;
+ if(c.id==='kraeuter')h+=`<div class="warn">⚠️ Wildkräuter nur sammeln, wenn du sie ganz sicher kennst – manche haben giftige Doppelgänger (siehe „Verwechslungen“).</div>`;
  if(c.id==='blumen')h+=`<div class="warn">⚠️ Manche Pflanzen sind giftig. Nur essen, was du ganz sicher kennst.</div>`;
  h+=`<div class="cards" style="--c:${c.c}">`;
  c.lessons.forEach((l,i)=>{
   const tg=l.tag?`<span class="tag" style="background:${l.tag.c}">${esc(l.tag.t)}</span>`:'';
-  const th=l.type==='intro'?`<div class="ph"><span class="em">📖</span></div>`:phHTML(l);
-  h+=`<button class="card" onclick="go('l-${l.id}')"><div class="thumb">${tg}${th}</div><div class="meta"><div class="ln"><span>LEKTION ${i+1}</span>${seen.has(l.id)?'<span class="seen">✓</span>':''}</div><h4>${esc(l.n)}</h4><small>${l.type==='intro'?'Grundlagen':esc(l.l)}</small></div></button>`});
+  const th=l.type==='intro'?`<div class="ph"><span class="em">📖</span></div>`:l.type==='vs'?`<div class="split">${phHTML(l.A)}${phHTML(l.B)}<span class="vsmini">VS</span></div>`:phHTML(l);
+  h+=`<button class="card" onclick="go('l-${l.id}')"><div class="thumb">${tg}${th}</div><div class="meta"><div class="ln"><span>LEKTION ${i+1}</span>${seen.has(l.id)?'<span class="seen">✓</span>':''}</div><h4>${esc(l.n)}</h4><small>${l.type==='intro'?'Grundlagen':l.type==='vs'?'Vergleich':esc(l.l)}</small></div></button>`});
  h+=`</div>`;$('#main').innerHTML=h;hydrate($('#main'));
 }
 
@@ -759,21 +1744,45 @@ function sizeText(sp){const r=refFor(sp);const q=sp.s/r.s;
  return `${sp.sl}: etwa ${fmtSize(sp.s)} – ungefähr so groß wie ${r.a} ${r.n} (${fmtSize(r.s)}).`}
 function stepsFor(l){
  if(l.type==='intro')return l.cat.intro.pts.map(p=>({t:p.p,x:p.t}));
- return [{t:'Das ist: '+l.n,x:l.d},{t:'Wie groß?',x:sizeText(l)},{t:l.cat.hl,x:l.h.map(s=>s.replace(/^\S+\s/,'')).join(', ')+'.'},{t:l.cat.fl,x:l.f.map(s=>s.replace(/^\S+\s/,'')).join(', ')+'.'},{t:'Wusstest du?',x:l.x}];
+ if(l.type==='vs')return [{t:l.t,x:`Links: ${l.A.n} – rechts: ${l.B.n}. Achte auf diese Unterschiede:`}].concat(l.rows.map(r=>({t:r[0],x:`${l.A.n}: ${r[1]}. ${l.B.n}: ${r[2]}.`}))).concat([{t:'Merksatz',x:l.m}]);
+ const s2=l.s?{t:'Wie groß?',x:sizeText(l)}:l.trk?{t:'Die Spur',x:`Größe des Abdrucks: ${l.tl}. ${l.erk}`}:{t:'Steckbrief',x:(l.k||[]).map(s=>s.replace(/^\S+\s/,'')).join(' · ')+'.'};
+ return [{t:'Das ist: '+l.n,x:l.d},s2,{t:l.cat.hl,x:l.h.map(s=>s.replace(/^\S+\s/,'')).join(', ')+'.'},{t:l.cat.fl,x:l.f.map(s=>s.replace(/^\S+\s/,'')).join(', ')+'.'},{t:'Wusstest du?',x:l.x}];
+}
+function trackSVG(type){
+ const P={
+  fuchs:'<ellipse cx="-8" cy="0" rx="10" ry="11"/><ellipse cx="14" cy="-5" rx="5" ry="4"/><ellipse cx="14" cy="5" rx="5" ry="4"/><ellipse cx="3" cy="-13" rx="5" ry="4"/><ellipse cx="3" cy="13" rx="5" ry="4"/><path d="M20 -5h6M20 5h6M9 -14h5M9 14h5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>',
+  katze:'<ellipse cx="-6" cy="0" rx="11" ry="13"/><circle cx="9" cy="-13" r="4.6"/><circle cx="14" cy="-4.5" r="4.6"/><circle cx="14" cy="4.5" r="4.6"/><circle cx="9" cy="13" r="4.6"/>',
+  reh:'<path d="M-14 -1C-14 -13 8 -11 21 -2C8 -2 -6 -1 -14 -1Z"/><path d="M-14 1C-14 13 8 11 21 2C8 2 -6 1 -14 1Z"/>',
+  schwein:'<path d="M-14 -1.5C-16 -18 10 -16 18 -3C8 -2.5 -6 -1.5 -14 -1.5Z"/><path d="M-14 1.5C-16 18 10 16 18 3C8 2.5 -6 1.5 -14 1.5Z"/><circle cx="-26" cy="-14" r="3.6"/><circle cx="-26" cy="14" r="3.6"/>',
+  dachs:'<ellipse cx="-6" cy="0" rx="9" ry="16"/><circle cx="10" cy="-16" r="4"/><circle cx="12" cy="-8" r="4"/><circle cx="13" cy="0" r="4"/><circle cx="12" cy="8" r="4"/><circle cx="10" cy="16" r="4"/><path d="M15 -16h11M17 -8h11M18 0h11M17 8h11M15 16h11" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>',
+  vogel:'<path d="M0 0L19 -11M0 0L22 0M0 0L19 11M0 0L-13 0" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" fill="none"/>',
+  hase:'<ellipse cx="-34" cy="-2" rx="6" ry="5"/><ellipse cx="-18" cy="4" rx="6" ry="5"/><ellipse cx="14" cy="-12" rx="15" ry="6"/><ellipse cx="14" cy="12" rx="15" ry="6"/>'};
+ let pos=[];
+ if(type==='hase')pos=[[110,110],[300,104],[490,114]];
+ else for(let i=0;i<6;i++){const off=type==='fuchs'?(i%2?3:-3):type==='vogel'?(i%2?12:-12):(i%2?20:-20);pos.push([70+i*92,110+off])}
+ const sc=type==='hase'?1.5:type==='vogel'?1.6:1.25;
+ return `<svg viewBox="0 0 600 220" class="trk-svg" aria-label="Spurbild"><rect x="4" y="4" width="592" height="212" rx="16" class="snow"/>
+ ${pos.map((p,i)=>`<g class="tp" data-i="${i}" transform="translate(${p[0]} ${p[1]}) scale(${sc})" fill="currentColor">${P[type]}</g>`).join('')}
+ <text x="580" y="204" text-anchor="end" class="trk-lbl">Laufrichtung →</text></svg>`;
 }
 function stageHTML(l){
  const c=l.cat;
+ if(l.type==='vs'){
+  return `<div class="layer" data-k="0"><div class="vs2"><div class="vsc"><div class="frame2">${phHTML(l.A)}</div><span class="pill fill">${esc(l.A.n)}</span></div><div class="vsx">VS</div><div class="vsc"><div class="frame2">${phHTML(l.B)}</div><span class="pill">${esc(l.B.n)}</span></div></div></div>`+
+  l.rows.map((r,i)=>`<div class="layer" data-k="${i+1}"><div class="ltitle" style="left:14px;text-align:center">${esc(r[0])}</div><div class="vsrow"><div class="vsbox a"><div class="vsimg">${phHTML(l.A)}</div><b>${esc(l.A.n)}</b><p>${esc(r[1])}</p></div><div class="vsbox b"><div class="vsimg">${phHTML(l.B)}</div><b>${esc(l.B.n)}</b><p>${esc(r[2])}</p></div></div></div>`).join('')+
+  `<div class="layer" data-k="${l.rows.length+1}"><div class="ltitle" style="left:14px;text-align:center">Merksatz</div><div class="factcard"><div class="ex">✓</div><div>${esc(l.m)}</div></div></div>`;
+ }
  if(l.type==='intro'){return `<div class="layer on" id="Li" style="opacity:1"><div class="intro"><div class="core">${l.e}</div><div class="plist">${c.intro.pts.map((p,i)=>`<span class="pill" data-i="${i}">${esc(p.p)}</span>`).join('')}</div></div></div>`}
- const r=refFor(l);const mx=Math.max(l.s,r.s);
- const facts=[l.g?`⚖️ ${l.g}`:'',l.a?`⏳ ${l.a}`:''].filter(Boolean).map(f=>`<span class="pill">${esc(f)}</span>`).join('');
+ const r=l.s?refFor(l):null;const mx=l.s?Math.max(l.s,r.s):1;
+ const facts=l.s?[l.g?`⚖️ ${l.g}`:'',l.a?`⏳ ${l.a}`:''].filter(Boolean).map(f=>`<span class="pill">${esc(f)}</span>`).join(''):'';
  return `<div class="mini" id="mini">${phHTML(l)}</div>
  <div class="layer L0" data-k="0"><div class="frame">${phHTML(l)}</div><div class="names"><span class="pill fill">${esc(l.n)}</span><span class="lat">${esc(l.l)}</span></div></div>
- <div class="layer" data-k="1"><div class="ltitle">Wie groß?</div><div class="sizes">
+ ${l.trk?`<div class="layer" data-k="1"><div class="ltitle">Die Spur</div><div class="trkwrap">${trackSVG(l.trk)}</div><div class="facts"><span class="pill">📏 ${esc(l.tl)}</span></div></div>`:!l.s?`<div class="layer" data-k="1"><div class="ltitle">Steckbrief</div><div class="cloud">${(l.k||[]).map(x=>`<span class="pill">${esc(x)}</span>`).join('')}</div></div>`:`<div class="layer" data-k="1"><div class="ltitle">Wie groß?</div><div class="sizes">
   <div class="srow me"><div class="lab"><b>${esc(l.n)}</b><span>${fmtSize(l.s)}</span></div><div class="trk"><div class="fil" data-w="${l.s/mx*100}">${l.e}</div></div></div>
   <div class="srow ref"><div class="lab"><b>${r.n}</b><span>${fmtSize(r.s)}</span></div><div class="trk"><div class="fil" data-w="${r.s/mx*100}">${r.e}</div></div></div>
-  <div class="facts">${facts}</div></div></div>
+  <div class="facts">${facts}</div></div></div>`}
  <div class="layer" data-k="2"><div class="ltitle">${esc(c.hl)}</div><div class="bigq">📍</div><div class="cloud">${l.h.map(x=>`<span class="pill">${esc(x)}</span>`).join('')}</div></div>
- <div class="layer" data-k="3"><div class="ltitle">${esc(c.fl)}</div><div class="bigq">${c.id==='baeume'?'🍃':c.id==='blumen'?'🌼':c.id==='pilze'?'🧺':'🍽️'}</div><div class="cloud">${l.f.map(x=>`<span class="pill">${esc(x)}</span>`).join('')}</div></div>
+ <div class="layer" data-k="3"><div class="ltitle">${esc(c.fl)}</div><div class="bigq">${({baeume:'🍃',blumen:'🌼',pilze:'🧺',hunde:'💛',katzen:'💛',kraeuter:'🍳',obst:'💪',steine:'🔬',wolken:'🌦️',spuren:'🔍'})[c.id]||'🍽️'}</div><div class="cloud">${l.f.map(x=>`<span class="pill">${esc(x)}</span>`).join('')}</div></div>
  <div class="layer" data-k="4"><div class="ltitle">Wusstest du?</div><div class="factcard"><div class="ex">!</div><div>${esc(l.x)}</div></div></div>`;
 }
 const ease=p=>1-Math.pow(1-p,3);const cl=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
@@ -792,7 +1801,9 @@ function Player(l){
   else{
    stage.querySelectorAll('.layer').forEach(L=>{const kk=+L.dataset.k;const on=kk===k;L.classList.toggle('on',on);L.style.opacity=on?e:0;L.style.transform=on?`translateY(${(1-e)*14}px)`:'none'});
    const mini=$('#mini');if(mini)mini.style.opacity=k>0?1:0;
-   if(k===0){const f=stage.querySelector('.L0 .frame');f.style.transform=`scale(${1.12-.12*e})`}
+   if(k===1){const L=stage.querySelector('.layer[data-k="1"]');L.querySelectorAll('.tp').forEach((g,i)=>{const pp=ease(cl(((t-k*STEP)-200-i*420)/350));g.style.opacity=pp});L.querySelectorAll('.cloud .pill').forEach((el,i)=>{const pp=ease(cl(((t-k*STEP)-300-i*380)/500));el.style.opacity=pp;el.style.transform=`scale(${.7+.3*pp})`})}
+   if(l.type==='vs'&&k>0&&k<=l.rows.length){const L=stage.querySelector(`.layer[data-k="${k}"]`);L.querySelectorAll('.vsbox').forEach((b,i)=>{const pp=ease(cl(((t-k*STEP)-150-i*500)/500));b.style.opacity=pp;b.style.transform=`translateY(${(1-pp)*12}px)`})}
+   if(k===0&&l.type!=='vs'){const f=stage.querySelector('.L0 .frame');f.style.transform=`scale(${1.12-.12*e})`}
    if(k===1){stage.querySelectorAll('.srow .fil').forEach((f,i)=>{const pp=ease(cl(((t-k*STEP)-200-i*350)/1300));f.style.width=`calc(${(+f.dataset.w)*pp}% )`})}
    if(k===2||k===3){const L=stage.querySelector(`.layer[data-k="${k}"]`);L.querySelectorAll('.cloud .pill').forEach((el,i)=>{const pp=ease(cl(((t-k*STEP)-300-i*380)/500));el.style.opacity=pp;el.style.transform=`scale(${.7+.3*pp})`})}
   }
@@ -812,39 +1823,57 @@ function renderLesson(l){
  const c=l.cat;const i=l.idx;const prev=c.lessons[i-1],next=c.lessons[i+1];
  const boxes=l.type==='intro'?
   [['b1','Was ist das?',c.intro.pts[0].t],['b2','So erkennst du es',c.intro.pts.slice(0,3).map(p=>p.p).join(' · ')],['b3','Was bedeutet es?',c.intro.pts[3].t],['b4','Tipp',c.intro.pts[4].t]]:
+  l.type==='vs'?[['b1','Was ist das?',`Vergleich: ${l.A.n} und ${l.B.n} sehen sich ähnlich.`],['b2','So erkennst du es',l.m],['b3','Warum ist es wichtig?',l.why],['b4','Tipp',l.tipp]]:
   [['b1','Was ist das?',l.d],['b2','So erkennst du es',l.erk],['b3','Warum ist es wichtig?',l.bed],['b4','Tipp',l.tipp]];
  let h=head()+`<button class="back" onclick="go('b-${c.id}')">← ${esc(c.n)}</button>
- <div class="lhead" style="--c:${c.c}"><div class="ln">${c.e} ${esc(c.n.toUpperCase())} · LEKTION ${i+1}${l.tag?` · <span style="color:${l.tag.c}">${esc(l.tag.t.toUpperCase())}</span>`:''}</div><h1>${esc(l.n)}</h1>${l.l?`<i>${esc(l.l)}</i>`:''}</div>
+ <div class="lhead" style="--c:${c.c}"><div class="ln">${c.e} ${esc(c.n.toUpperCase())} · LEKTION ${i+1}${l.tag?` · <span style="color:${l.tag.c}">${esc(l.tag.t.toUpperCase())}</span>`:''}</div><h1>${esc(l.n)}</h1>${l.l&&l.type==='sp'?`<i>${esc(l.l)}</i>`:''}</div>
  <div class="player" style="--c:${c.c}"><div class="stage" id="stage"></div><div class="caption" id="cap"></div>
  <div class="ctrl"><button class="cbtn play" id="play" aria-label="Abspielen/Pause">❚❚</button><button class="cbtn" id="rst" aria-label="Neustart">↺</button><input type="range" id="rng" min="0" step="10" aria-label="Spulen"><div class="spd"><button data-s="0.5">½×</button><button data-s="1" class="on">1×</button><button data-s="2">2×</button></div></div>
  <div class="steps" id="steps"></div></div>
  <div class="boxes">${boxes.map(b=>`<div class="box ${b[0]}"><h5>${b[1]}</h5><p>${esc(b[2])}</p></div>`).join('')}</div>
- ${l.w?`<div class="credit" style="--c:${c.c}">Foto & mehr: <a href="https://de.wikipedia.org/wiki/${encodeURIComponent(l.w.replace(/ /g,'_'))}" target="_blank" rel="noopener">Wikipedia – ${esc(l.w)} ↗</a> (Lizenz siehe Bildseite)</div>`:''}
+ ${l.type==='sp'&&l.cat.snd?`<div class="sound" style="--c:${c.c}"><button class="sbtn" onclick="playSound('${l.id}',this)">🔊 Stimme anhören</button><div class="sres"></div></div>`:''}
+ ${l.type==='vs'?`<div class="nav2" style="--c:${c.c};margin-top:12px"><button onclick="go('l-${l.A.id}')">${l.A.e} ${esc(l.A.n)}</button><button onclick="go('l-${l.B.id}')">${l.B.e} ${esc(l.B.n)}</button></div>`:''}
+ ${l.w&&l.type==='sp'?`<div class="credit" style="--c:${c.c}">Foto & mehr: <a href="https://de.wikipedia.org/wiki/${encodeURIComponent(l.w.replace(/ /g,'_'))}" target="_blank" rel="noopener">Wikipedia – ${esc(l.w)} ↗</a> (Lizenz siehe Bildseite)</div>`:''}
  <div class="nav2" style="--c:${c.c}"><button ${prev?'':'disabled'} onclick="go('l-${prev?prev.id:''}')">← ${prev?'Zurück':'—'}</button><button class="nx" onclick="go('${next?'l-'+next.id:'b-'+c.id}')">${next?'Weiter: '+esc(next.n)+' →':'Zur Übersicht ✓'}</button></div>`;
  $('#main').innerHTML=h;markSeen(l.id);player=Player(l);
 }
+
+/* ---------- Tierstimmen (Wikimedia Commons) ---------- */
+window.playSound=(id,btn)=>{const l=byId[id];const box=btn.parentNode.querySelector('.sres');btn.disabled=true;btn.textContent='⏳ Suche Aufnahme …';
+ const q=encodeURIComponent(`filetype:audio "${l.l}"`);
+ const done=(h,txt)=>{box.innerHTML=h;btn.disabled=false;btn.textContent=txt||'🔊 Stimme anhören'};
+ try{fetch(`https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=${q}&gsrnamespace=6&gsrlimit=6&prop=imageinfo&iiprop=url|mime&format=json&origin=*`).then(r=>r.json()).then(j=>{
+  const pages=Object.values((j.query&&j.query.pages)||{}).sort((a,b)=>(a.index||0)-(b.index||0)).filter(p=>p.imageinfo&&/^audio|ogg/.test(p.imageinfo[0].mime||''));
+  if(!pages.length){done('<p class="snote">Für diese Art wurde keine Aufnahme gefunden.</p>');return}
+  const ii=pages[0].imageinfo[0];const u=ii.url;const m=u.match(/\/commons\/(\w\/\w\w)\/([^/]+)$/);
+  const mp3=m?`https://upload.wikimedia.org/wikipedia/commons/transcoded/${m[1]}/${m[2]}/${m[2]}.mp3`:'';
+  done(`<audio controls autoplay preload="auto">${mp3&&!/\.mp3$/i.test(u)?`<source src="${mp3}" type="audio/mpeg">`:''}<source src="${u}"></audio><p class="snote">Aufnahme: <a href="${ii.descriptionurl}" target="_blank" rel="noopener">Wikimedia Commons ↗</a> (Lizenz siehe Dateiseite)</p>`,'🔊 Nochmal suchen')}).catch(()=>done('<p class="snote">Tierstimmen funktionieren nur auf <b>natur.kompassapps.de</b> – hier im Claude-Fenster sind Aufnahmen aus dem Internet gesperrt.</p>'))}catch(e){done('<p class="snote">Tierstimmen gibt es auf natur.kompassapps.de.</p>')}
+};
 
 /* ---------- Quiz ---------- */
 const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
 const pick=a=>a[Math.random()*a.length|0];
 function makeQ(){
- const types=['bild','bild','bild','gruppe','groesse','erk','rechnen','gift'];
+ const types=['bild','bild','bild','gruppe','groesse','erk','rechnen','gift','vs'];
  for(let tries=0;tries<50;tries++){
-  const ty=pick(types);const s=pick(ALL);
+  const ty=pick(types);const s=pick(ALL);if(s.cat.id==='spuren'&&(ty==='bild'||ty==='gruppe'))continue;
   if(ty==='bild'||ty==='erk'){const others=shuffle(s.cat.items.filter(x=>x!==s)).slice(0,3);if(others.length<3)continue;
    return{ty,sp:s,q:ty==='bild'?'Was ist hier zu sehen?':'Welche Art passt zu dieser Beschreibung?',quote:ty==='erk'?s.erk:'',opts:shuffle([s,...others].map(x=>x.n)),a:s.n,ex:`${s.n} – ${s.erk}`}}
-  if(ty==='gruppe'){const opts=shuffle([s.cat.n,...shuffle(CATS.filter(c=>c!==s.cat)).slice(0,3).map(c=>c.n)]);return{ty,sp:s,q:`Zu welcher Gruppe gehört: ${s.n}?`,opts,a:s.cat.n,ex:`${s.n} gehört zu den ${s.cat.n}. ${s.d}`}}
+  if(ty==='gruppe'){const opts=shuffle([s.cat.n,...shuffle(CATS.filter(c=>c!==s.cat&&c.id!=='vergleich'&&c.id!=='spuren')).slice(0,3).map(c=>c.n)]);return{ty,sp:s,q:`Zu welcher Gruppe gehört: ${s.n}?`,opts,a:s.cat.n,ex:`${s.n} gehört zu den ${s.cat.n}. ${s.d}`}}
+  if(ty==='vs'){const p=pick(VS.pairs);const r=pick(p.rows);const forA=Math.random()<.5;const X=forA?p.A:p.B;
+   return{ty,sp:p,q:`${p.t} – ${r[0]}: Was trifft auf ${X.n} zu?`,opts:shuffle([r[1],r[2]]),a:forA?r[1]:r[2],ex:`${p.A.n}: ${r[1]}. ${p.B.n}: ${r[2]}. Merksatz: ${p.m}`}}
+  if((ty==='groesse'||ty==='rechnen')&&!s.s)continue;
   if(ty==='groesse'){const f=shuffle([0.2,0.4,2.5,5]).slice(0,3);const opts=shuffle([s.s,...f.map(x=>s.s*x)].map(fmtSize));if(new Set(opts).size<4)continue;return{ty,sp:s,q:`${s.n} – ${s.sl}: Wie groß ungefähr?`,opts,a:fmtSize(s.s),ex:sizeText(s)}}
-  if(ty==='gift'){const g=ALL.filter(x=>x.tag&&(x.cat.id==='pilze'||x.cat.id==='blumen'));const t=pick(g);const lab=x=>/tödlich/.test(x.tag.t)?'Tödlich giftig':/giftig/.test(x.tag.t)?'Giftig':'Essbar';
+  if(ty==='gift'){const g=ALL.filter(x=>x.tag&&['essbar','jung essbar','giftig','leicht giftig','tödlich giftig'].includes(x.tag.t)&&['pilze','blumen','kraeuter','baeume'].includes(x.cat.id));const t=pick(g);const lab=x=>/tödlich/.test(x.tag.t)?'Tödlich giftig':/giftig/.test(x.tag.t)?'Giftig':'Essbar';
    return{ty,sp:t,q:`${t.n}: essbar oder giftig?`,opts:['Essbar','Giftig','Tödlich giftig'],a:lab(t),ex:`${t.n} ist ${t.tag.t}. ${t.tipp}`}}
-  if(ty==='rechnen'){const a=pick(ALL),b=pick(ALL);if(a===b)continue;const r=a.s/b.s;if(r<3||r>200)continue;const ans=Math.round(r);
+  if(ty==='rechnen'){const SZ=ALL.filter(x=>x.s);const a=pick(SZ),b=pick(SZ);if(a===b)continue;const r=a.s/b.s;if(r<3||r>200)continue;const ans=Math.round(r);
    const d=shuffle([...new Set([Math.round(ans*2),Math.max(1,Math.round(ans/2)),ans+ (ans>10?5:2),Math.max(1,ans-(ans>10?5:1))])].filter(x=>x!==ans)).slice(0,3);if(d.length<3)continue;
    return{ty,sp:a,q:`Rechenaufgabe: ${a.n} ist etwa ${fmtSize(a.s)} groß (${a.sl}), ${b.n} etwa ${fmtSize(b.s)}. Wie oft passt ${b.n} ungefähr in ${a.n}?`,opts:shuffle([ans,...d].map(x=>x+'-mal')),a:ans+'-mal',ex:`${fmtSize(a.s)} ÷ ${fmtSize(b.s)} ≈ ${fmtN(r,1)} → gerundet ${ans}-mal.`}}
  }
  const s=pick(ALL);return{ty:'gruppe',sp:s,q:`Zu welcher Gruppe gehört: ${s.n}?`,opts:shuffle(CATS.slice(0,4).map(c=>c.n).concat(CATS.slice(0,4).includes(s.cat)?[]:[s.cat.n])).slice(0,5),a:s.cat.n,ex:''};
 }
 let Q=null;
-function renderQuizStart(){Q={qs:[],i:0,ok:0,wrong:[]};const used=new Set();while(Q.qs.length<10){const q=makeQ();const key=q.ty+q.sp.id;if(used.has(key))continue;used.add(key);Q.qs.push(q)}renderQ()}
+function renderQuizStart(){Q={qs:[],i:0,ok:0,wrong:[]};const used=new Set();while(Q.qs.length<10){const q=makeQ();const key=q.ty+q.sp.id+q.q;if(used.has(key))continue;used.add(key);Q.qs.push(q)}renderQ()}
 function renderQ(){
  const q=Q.qs[Q.i];const c='#a78bfa';
  let h=head()+`<button class="back" onclick="go('start')">← Startseite</button><div class="qwrap" style="--c:${c}"><div class="qtop"><span>FRAGE ${Q.i+1} / 10</span><span>✓ ${Q.ok}</span></div><div class="qbar"><i style="width:${Q.i*10}%"></i></div>`;
