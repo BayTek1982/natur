@@ -1656,38 +1656,34 @@ window.setTheme=t=>{themePref=t;LS.set('natur_theme',t);applyTheme()};
 const themeHTML=`<div class="theme" role="group" aria-label="Darstellung"><button data-t="dark" onclick="setTheme('dark')">☾<span class="lbl"> Dunkel</span></button><button data-t="light" onclick="setTheme('light')">☀<span class="lbl"> Hell</span></button><button data-t="auto" onclick="setTheme('auto')">◐<span class="lbl"> Auto</span></button></div>`;
 
 /* ---------- Bilder (Wikipedia, mehrere Quellen) ---------- */
-const IMGK='natur_img3';const imgCache=LS.get(IMGK,{});const pending={};const RETRY=6*3600e3;
+const IMGK='natur_img4';const imgCache=LS.get(IMGK,{});const pending={};const RETRY=6*3600e3;
 let active=0;const queue=[];
 function slot(fn){return new Promise(res=>{const run=()=>{active++;fn().then(v=>{active--;res(v);if(queue.length)queue.shift()()})};active<4?run():queue.push(run)})}
 const fj=(u,ms=8000)=>Promise.race([fetch(u).then(r=>r.ok?r.json():null),new Promise((_,rej)=>setTimeout(()=>rej('timeout'),ms))]).catch(()=>null);
-const sized=(u,j)=>{if(u&&/\/\d+px-/.test(u)){const ow=(j&&j.originalimage&&j.originalimage.width)||9999;if(ow>640)u=u.replace(/\/\d+px-/,'/640px-')}return u};
+const sized=(u,j)=>u;
 async function wikiSummary(lang,title){const j=await fj(`https://${lang}.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(title.replace(/ /g,'_'))}`);
  if(!j||j.type==='disambiguation')return null;const u=(j.thumbnail&&j.thumbnail.source)||(j.originalimage&&j.originalimage.source);return u?sized(u,j):null}
-async function wikiPageImage(lang,title){const j=await fj(`https://${lang}.wikipedia.org/w/api.php?action=query&prop=pageimages&piprop=thumbnail&pithumbsize=640&redirects=1&format=json&origin=*&titles=${encodeURIComponent(title)}`);
+async function wikiPageImage(lang,title){const j=await fj(`https://${lang}.wikipedia.org/w/api.php?action=query&prop=pageimages&piprop=thumbnail&pithumbsize=500&redirects=1&format=json&origin=*&titles=${encodeURIComponent(title)}`);
  const p=j&&j.query&&Object.values(j.query.pages||{})[0];return p&&p.thumbnail?p.thumbnail.source:null}
-async function commonsSearch(q){const j=await fj(`https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=${encodeURIComponent('filetype:bitmap '+q)}&gsrnamespace=6&gsrlimit=5&prop=imageinfo&iiprop=url|mime&iiurlwidth=640&format=json&origin=*`);
+async function commonsSearch(q){const j=await fj(`https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=${encodeURIComponent('filetype:bitmap '+q)}&gsrnamespace=6&gsrlimit=5&prop=imageinfo&iiprop=url|mime&iiurlwidth=500&format=json&origin=*`);
  const ps=j&&j.query?Object.values(j.query.pages||{}).sort((a,b)=>(a.index||0)-(b.index||0)):[];
  for(const p of ps){const ii=p.imageinfo&&p.imageinfo[0];if(ii&&/jpe?g|png|webp/i.test(ii.mime||'')&&!/map|karte|logo|wappen|flag|icon|range|verbreitung|distribution/i.test(p.title))return ii.thumburl||ii.url}return null}
 const binomial=l=>l&&/^[A-Z][a-z]+ [a-z×]+/.test(l)&&!/^(Felis catus|Canis lupus)/.test(l);
-function getImg(sp){
- const key=sp.w||sp.n;const c=imgCache[key];
- if(c&&c.u)return Promise.resolve(c.u);
+function getImg(sp,bad){
+ const key=sp.w||sp.n;const c=imgCache[key];bad=bad||new Set((c&&c.bad)||[]);
+ if(c&&c.u&&!bad.has(c.u))return Promise.resolve(c.u);
  if(c&&c.f&&Date.now()-c.f<RETRY)return Promise.resolve(null);
  if(pending[key])return pending[key];
  return pending[key]=slot(async()=>{
-  let u=null;
-  try{
-   u=await wikiSummary('de',key);
-   if(!u)u=await wikiPageImage('de',key);
-   if(!u&&sp.en)u=await wikiSummary('en',sp.en);
-   if(!u&&binomial(sp.l))u=await wikiSummary('en',sp.l.split(' ').slice(0,2).join(' '));
-   if(!u)u=await commonsSearch(sp.en||(binomial(sp.l)?sp.l:sp.n));
-  }catch(e){u=null}
-  imgCache[key]=u?{u}:{f:Date.now()};LS.set(IMGK,imgCache);delete pending[key];return u;
+  let u=null;const ok=x=>x&&!bad.has(x);
+  const steps=[()=>wikiSummary('de',key),()=>wikiPageImage('de',key),()=>sp.en?wikiSummary('en',sp.en):null,()=>sp.en?wikiPageImage('en',sp.en):null,
+   ()=>binomial(sp.l)?wikiSummary('en',sp.l.split(' ').slice(0,2).join(' ')):null,()=>commonsSearch(sp.en||(binomial(sp.l)?sp.l:sp.n))];
+  for(const s of steps){try{const x=await s();if(ok(x)){u=x;break}}catch(e){}}
+  imgCache[key]=u?{u,bad:[...bad]}:{f:Date.now(),bad:[...bad]};LS.set(IMGK,imgCache);delete pending[key];return u;
  });
 }
 function phHTML(sp,cls=''){return `<div class="ph ${cls}" data-w="${esc(sp.id||'')}"><span class="em">${sp.e}</span><img alt="${esc(sp.n)}" referrerpolicy="no-referrer"></div>`}
-function hydrate(root){(root||document).querySelectorAll('.ph[data-w]:not([data-h])').forEach(el=>{el.setAttribute('data-h','1');const w=el.dataset.w;const sp=byId[w];if(!sp||!sp.w)return;getImg(sp).then(u=>{if(!u)return;const im=el.querySelector('img');im.onload=()=>{im.classList.add('ok');const e=el.querySelector('.em');if(e)e.style.opacity=0};im.onerror=()=>{delete imgCache[sp.w];LS.set(IMGK,imgCache)};im.src=u})})}
+function hydrate(root){(root||document).querySelectorAll('.ph[data-w]:not([data-h])').forEach(el=>{el.setAttribute('data-h','1');const w=el.dataset.w;const sp=byId[w];if(!sp||!sp.w)return;getImg(sp).then(u=>{if(!u)return;const im=el.querySelector('img');im.onload=()=>{im.classList.add('ok');const e=el.querySelector('.em');if(e)e.style.opacity=0};let tries=0;im.onerror=()=>{if(++tries>4)return;const bad=new Set((imgCache[sp.w]&&imgCache[sp.w].bad)||[]);bad.add(im.src);imgCache[sp.w]={bad:[...bad]};getImg(sp,bad).then(n=>{if(n)im.src=n})};im.src=u})})}
 
 /* ---------- Sidebar ---------- */
 function renderSide(){
